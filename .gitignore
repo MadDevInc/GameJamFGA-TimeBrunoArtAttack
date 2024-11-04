@@ -29,6 +29,30 @@ sysinfo.txt
 .DS_Store
 
 ###
+# Godot folders and files
+###
+# Godot export and build directories
+export/
+.build/
+
+# Godot auto-generated files
+.project.godot
+.import/
+*.godot.import
+*.import
+.godot/
+
+# Godot backups and temp files
+*.cfg
+*.godot.save
+*.tmp
+*.backup
+
+# Godot file cache
+.editor_cache/
+.asset_library/
+
+###
 # OS generated
 ###
 .DS_Store

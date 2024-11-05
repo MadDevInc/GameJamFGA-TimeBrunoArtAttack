@@ -1,7 +1,40 @@
-[gd_scene load_steps=10 format=3 uid="uid://46qcy21dsoc7"]
+[gd_scene load_steps=19 format=3 uid="uid://46qcy21dsoc7"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_02oea"]
-[ext_resource type="Texture2D" uid="uid://c55f0fv0snabd" path="res://sprites/Sword_Idle_full.png" id="1_ldjpg"]
+[ext_resource type="Texture2D" uid="uid://c55f0fv0snabd" path="res://sprites/player/Sword_Idle_full.png" id="1_ldjpg"]
+[ext_resource type="Texture2D" uid="uid://bhiahscv01dk7" path="res://sprites/player/Sword_attack_full.png" id="2_52j2d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua7cr"]
+atlas = ExtResource("2_52j2d")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntylv"]
+atlas = ExtResource("2_52j2d")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnwu1"]
+atlas = ExtResource("2_52j2d")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t52s"]
+atlas = ExtResource("2_52j2d")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx8wc"]
+atlas = ExtResource("2_52j2d")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76lr8"]
+atlas = ExtResource("2_52j2d")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xhas"]
+atlas = ExtResource("2_52j2d")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppcdq"]
+atlas = ExtResource("2_52j2d")
+region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8rnck"]
 atlas = ExtResource("1_ldjpg")
@@ -25,6 +58,35 @@ region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xbxkd"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ua7cr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntylv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnwu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t52s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx8wc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76lr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xhas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppcdq")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8rnck")
@@ -58,7 +120,7 @@ texture_filter = 1
 position = Vector2(1, -4)
 scale = Vector2(1.60938, 1.53125)
 sprite_frames = SubResource("SpriteFrames_xbxkd")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

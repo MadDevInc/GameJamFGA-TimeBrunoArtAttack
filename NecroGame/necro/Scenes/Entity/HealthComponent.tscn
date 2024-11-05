@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyy3470ehetmv"]
+
+[ext_resource type="Texture2D" uid="uid://ddaxaffvybeco" path="res://Sprites/UI/health_bar_under.png" id="1_hwiqv"]
+[ext_resource type="Texture2D" uid="uid://b15c4hhneel67" path="res://Sprites/UI/health_bar_progress.png" id="2_aeabf"]
+[ext_resource type="Script" path="res://Scenes/Entity/HealthComponent.gd" id="3_by11d"]
+
+[node name="HealthComponent" type="TextureProgressBar"]
+texture_filter = 1
+offset_right = 14.0
+offset_bottom = 3.0
+texture_under = ExtResource("1_hwiqv")
+texture_progress = ExtResource("2_aeabf")
+script = ExtResource("3_by11d")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 3.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 3.0
+text = "0"

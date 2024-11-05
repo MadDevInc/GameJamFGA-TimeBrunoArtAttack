@@ -1,0 +1,209 @@
+[gd_scene load_steps=24 format=3 uid="uid://chxm7u022syxj"]
+
+[ext_resource type="Texture2D" uid="uid://cf1a6hup0nn67" path="res://Sprites/Enemies/Forest/Skeleton/MushroomWalkPlaceHolder.png" id="1_ksn2c"]
+[ext_resource type="Script" path="res://Scenes/Enemies/Forest/Skeleton/Skeleton.gd" id="1_vdd3v"]
+[ext_resource type="Texture2D" uid="uid://caom148uvymtl" path="res://Sprites/UI/Attack_Target_Locked.png" id="3_1xhyr"]
+[ext_resource type="PackedScene" uid="uid://dyy3470ehetmv" path="res://Scenes/Entity/HealthComponent.tscn" id="3_c6qvp"]
+[ext_resource type="Texture2D" uid="uid://f6ug1rahqj8w" path="res://Sprites/UI/Attack_Target_Unlocked.png" id="4_y5kv7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y74wx"]
+size = Vector2(6, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnduy"]
+atlas = ExtResource("1_ksn2c")
+region = Rect2(0, 0, 11, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kmwq"]
+atlas = ExtResource("1_ksn2c")
+region = Rect2(55, 0, 11, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tja17"]
+atlas = ExtResource("1_ksn2c")
+region = Rect2(11, 0, 11, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0rr6"]
+atlas = ExtResource("1_ksn2c")
+region = Rect2(22, 0, 11, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77vhq"]
+atlas = ExtResource("1_ksn2c")
+region = Rect2(33, 0, 11, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67sph"]
+atlas = ExtResource("1_ksn2c")
+region = Rect2(44, 0, 11, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdqb0"]
+atlas = ExtResource("1_ksn2c")
+region = Rect2(55, 0, 11, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyqon"]
+atlas = ExtResource("1_ksn2c")
+region = Rect2(0, 0, 11, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dorw2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnduy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kmwq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tja17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0rr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77vhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67sph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdqb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyqon")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7hho"]
+atlas = ExtResource("3_1xhyr")
+region = Rect2(0, 0, 15, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ni4u0"]
+atlas = ExtResource("4_y5kv7")
+region = Rect2(0, 0, 19, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbrx2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7hho")
+}],
+"loop": false,
+"name": &"locked",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ni4u0")
+}],
+"loop": false,
+"name": &"unlocked",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qe668"]
+radius = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_po4vo"]
+radius = 7.0
+
+[sub_resource type="Animation" id="Animation_s2ems"]
+resource_name = "attack"
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"deal_damage_to_current_target"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pcklo"]
+_data = {
+"attack": SubResource("Animation_s2ems")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xat4"]
+size = Vector2(14, 18)
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+input_pickable = true
+script = ExtResource("1_vdd3v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_y74wx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_dorw2")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="TargetUI" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_pbrx2")
+animation = &"locked"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 5.0
+target_desired_distance = 5.0
+debug_enabled = true
+debug_path_custom_color = Color(1, 0, 0, 1)
+
+[node name="VisionCone" type="Area2D" parent="."]
+position = Vector2(0, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionCone"]
+shape = SubResource("CircleShape2D_qe668")
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_po4vo")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pcklo")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = -60.0
+offset_top = -32.0
+offset_right = 74.0
+offset_bottom = -9.0
+text = "moving_to_target"
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_c6qvp")]
+offset_left = -7.0
+offset_top = -8.0
+offset_right = 7.0
+offset_bottom = -5.0
+health = 3
+bar_color = Color(1, 0, 0, 1)
+
+[node name="MouseHook" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseHook"]
+shape = SubResource("RectangleShape2D_0xat4")
+
+[connection signal="body_entered" from="VisionCone" to="." method="_on_vision_cone_body_entered"]
+[connection signal="body_exited" from="VisionCone" to="." method="_on_vision_cone_body_exited"]
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
+[connection signal="mouse_entered" from="MouseHook" to="." method="_on_mouse_hook_mouse_entered"]
+[connection signal="mouse_exited" from="MouseHook" to="." method="_on_mouse_hook_mouse_exited"]

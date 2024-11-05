@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://46qcy21dsoc7"]
+
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_02oea"]
+[ext_resource type="Texture2D" uid="uid://bqh5rkv6u623q" path="res://Sprites/necro2/necro.png" id="2_0t1u7"]
+[ext_resource type="Texture2D" uid="uid://6u5822nx04js" path="res://Sprites/necro2/necro_walk_rl.png" id="3_exgcn"]
+[ext_resource type="Texture2D" uid="uid://bllca8gkn8f3p" path="res://Sprites/necro2/necro_walk_bottom.png" id="3_ulmlt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu17x"]
+atlas = ExtResource("2_0t1u7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snae6"]
+atlas = ExtResource("3_exgcn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luwpb"]
+atlas = ExtResource("3_exgcn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqjbb"]
+atlas = ExtResource("3_ulmlt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vcpj"]
+atlas = ExtResource("3_ulmlt")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xbxkd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu17x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snae6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_luwpb")
+}],
+"loop": true,
+"name": &"moving_sides",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqjbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vcpj")
+}],
+"loop": true,
+"name": &"moving_up_down",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b654q"]
+radius = 9.0
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(75, 51)
+script = ExtResource("1_02oea")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, -4)
+scale = Vector2(1.60938, 1.53125)
+sprite_frames = SubResource("SpriteFrames_xbxkd")
+animation = &"moving_sides"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_b654q")

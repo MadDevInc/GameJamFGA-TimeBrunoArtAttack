@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://xhl48uycu6pl"]
+
+[ext_resource type="Texture2D" uid="uid://bla3r0j8ju6a2" path="res://sprites/Enemies/Forest/Skeleton/MushroomWalkPlaceHolder.png" id="1_0owcj"]
+[ext_resource type="Script" path="res://scenes/Enemies/enemies.gd" id="1_52cai"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2muh"]
+atlas = ExtResource("1_0owcj")
+region = Rect2(0, 0, 11, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4uiw"]
+atlas = ExtResource("1_0owcj")
+region = Rect2(11, 0, 11, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl6tl"]
+atlas = ExtResource("1_0owcj")
+region = Rect2(22, 0, 11, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijlej"]
+atlas = ExtResource("1_0owcj")
+region = Rect2(33, 0, 11, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ksp3"]
+atlas = ExtResource("1_0owcj")
+region = Rect2(44, 0, 11, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgg1i"]
+atlas = ExtResource("1_0owcj")
+region = Rect2(55, 0, 11, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w27wu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2muh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4uiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gl6tl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijlej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ksp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgg1i")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_831g4"]
+
+[node name="Enemies" type="CharacterBody2D"]
+script = ExtResource("1_52cai")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(99.25, 47)
+scale = Vector2(2.5, 2.14286)
+sprite_frames = SubResource("SpriteFrames_w27wu")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(98, 54)
+shape = SubResource("CircleShape2D_831g4")

@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=4 uid="uid://bwtkn6ive1y67"]
+[gd_scene load_steps=4 format=4 uid="uid://bgk3ta1vladm3"]
 
-[ext_resource type="PackedScene" uid="uid://46qcy21dsoc7" path="res://scenes/player.tscn" id="1_581yn"]
-[ext_resource type="PackedScene" uid="uid://uibodhxxbnw" path="res://scenes/World/ground.tscn" id="2_pdccf"]
+[ext_resource type="PackedScene" uid="uid://46qcy21dsoc7" path="res://scenes/Player/player.tscn" id="1_581yn"]
+[ext_resource type="PackedScene" uid="uid://5jjw1yha0sfm" path="res://scenes/ground.tscn" id="2_fbujr"]
+[ext_resource type="PackedScene" uid="uid://xhl48uycu6pl" path="res://scenes/Enemies/enemies.tscn" id="3_15fvu"]
 
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_581yn")]
-script = null
 
-[node name="Ground" parent="." instance=ExtResource("2_pdccf")]
+[node name="Ground" parent="." instance=ExtResource("2_fbujr")]
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAlAAAAAAAAAAAAAAAmAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAA=")
+
+[node name="Enemies" parent="." instance=ExtResource("3_15fvu")]
+position = Vector2(94, 33)

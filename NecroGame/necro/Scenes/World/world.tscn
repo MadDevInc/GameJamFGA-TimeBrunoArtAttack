@@ -1,13 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgk3ta1vladm3"]
 
-[ext_resource type="Script" path="res://Scenes/World/world.gd" id="1_r61ud"]
-[ext_resource type="PackedScene" uid="uid://ba12u37k6dgw4" path="res://Scenes/PlayerTix/PlayerTix.tscn" id="4_kvku0"]
-[ext_resource type="PackedScene" uid="uid://chxm7u022syxj" path="res://Scenes/Enemies/Forest/Skeleton/Skeleton.tscn" id="5_k0g4u"]
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_fy7mf"]
-vertices = PackedVector2Array(340.141, 207, 10.0469, 207, 10.9531, 12, 342.859, 12)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(1, 2, 0, 217, 350, 217, 353, 2)])
+[ext_resource type="PackedScene" uid="uid://46qcy21dsoc7" path="res://Scenes/Player/player.tscn" id="1_581yn"]
+[ext_resource type="PackedScene" uid="uid://5jjw1yha0sfm" path="res://Scenes/ground.tscn" id="2_fbujr"]
+[ext_resource type="PackedScene" uid="uid://xhl48uycu6pl" path="res://Scenes/Enemies/enemies.tscn" id="3_15fvu"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_r61ud")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://xhl48uycu6pl"]
+[gd_scene load_steps=12 format=3 uid="uid://xhl48uycu6pl"]
 
 [ext_resource type="Texture2D" uid="uid://dsl27g2ipip26" path="res://Sprites/Enemies/Forest/Skeleton/MushroomWalkPlaceHolder.png" id="1_0owcj"]
 [ext_resource type="Script" path="res://Scenes/Enemies/enemies.gd" id="1_52cai"]
@@ -55,8 +55,14 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_831g4"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cp4q5"]
+radius = 8.0
+height = 24.0
+
 [node name="Enemies" type="CharacterBody2D"]
 position = Vector2(59, 35)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_52cai")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -70,3 +76,10 @@ autoplay = "walk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 2)
 shape = SubResource("CircleShape2D_831g4")
+
+[node name="hitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_cp4q5")
+debug_color = Color(0.893993, 0.000217551, 0.782546, 0.42)

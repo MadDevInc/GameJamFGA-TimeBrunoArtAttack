@@ -8,16 +8,17 @@ func _physics_process(delta):
 	var direction_y = Input.get_axis("up", "down")
 	
 	if direction_x == 0 and direction_y == 0:
-		$AnimatedSprite2D.play("idle")
+		$AnimatedSprite2D.play("necro_idle")
 
 
 	if direction_x:
 		velocity.x = direction_x * SPEED
-		print(velocity)
-		#if direction_x == "left":
-			#$AnimatedSprite2D.play("moving_sides")
-		#else:
-			#$AnimatedSprite2D.play("moving_sides")
+		if direction_x > 0:
+			$AnimatedSprite2D.flip_h = false
+			$AnimatedSprite2D.play("necro_walk_rl")
+		else:
+			$AnimatedSprite2D.flip_h = true
+			$AnimatedSprite2D.play("necro_walk_rl")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
@@ -25,9 +26,16 @@ func _physics_process(delta):
 	
 	if direction_y:
 		velocity.y = direction_y * SPEED
-		$AnimatedSprite2D.play("moving_up_down")
+		if direction_y > 0:
+			$AnimatedSprite2D.play("necro_walk_bottom")
+		else:
+			$AnimatedSprite2D.play("necro_walk_top")
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 		
 
 	move_and_slide()
+
+
+func _on_hurt_box_area_entered(area):
+	pass # Replace with function body.

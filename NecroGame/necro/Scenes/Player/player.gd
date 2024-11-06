@@ -12,41 +12,82 @@ signal healthChanged
 
 var isHurt: bool = false
 var enemyCollisions = []
+var direction: String
+var attack : bool = false
+
+var is_attacking : bool = false
 
 func _physics_process(delta):
+	$Label.text = ("animation: " + $AnimatedSprite2D.animation + "\n is attacking: "+ str(is_attacking) + "\nvelocity: " + str(velocity))
 
 	var direction_x = Input.get_axis("left", "right")
 	var direction_y = Input.get_axis("up", "down")
-	
-	if direction_x == 0 and direction_y == 0:
-		$AnimatedSprite2D.play("necro_idle")
 
+	if !is_attacking:
+		if direction_x:
+			velocity.x = direction_x * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			
+		if direction_y:
+			velocity.y = direction_y * SPEED
+		else:
+			velocity.y = move_toward(velocity.y, 0, SPEED)
 
-	if direction_x:
-		velocity.x = direction_x * SPEED
 		if direction_x > 0:
 			$AnimatedSprite2D.flip_h = false
-			$AnimatedSprite2D.play("necro_walk_rl")
-		else:
+			$AnimatedSprite2D.play("necro_walk_right")
+		elif direction_x < 0:
 			$AnimatedSprite2D.flip_h = true
-			$AnimatedSprite2D.play("necro_walk_rl")
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+			$AnimatedSprite2D.play("necro_walk_right")
+		elif direction_y > 0:
+			$AnimatedSprite2D.play("necro_walk_bottom")
+		elif direction_y < 0:
+			$AnimatedSprite2D.play("necro_walk_top")
 		
-
-	
-	if direction_y:
-		velocity.y = direction_y * SPEED
-		#$AnimatedSprite2D.play("moving_up_down")
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+		if direction_x == 0 and direction_y == 0:
+			if $AnimatedSprite2D.flip_h == false and $AnimatedSprite2D.animation == "necro_walk_right":
+				$AnimatedSprite2D.play("idle_right")
+			elif $AnimatedSprite2D.flip_h == true and $AnimatedSprite2D.animation == "necro_walk_right":
+				$AnimatedSprite2D.flip_h = false
+				$AnimatedSprite2D.play("idle_left")
+			elif $AnimatedSprite2D.animation == "necro_walk_bottom":
+				$AnimatedSprite2D.play("necro_idle")
+			elif $AnimatedSprite2D.animation == "necro_walk_top":
+				$AnimatedSprite2D.play("idle_top")
 		
+		if Input.is_action_just_pressed("attack"):
+			velocity = Vector2(0,0)
+			is_attacking = true
+			if $AnimatedSprite2D.animation == "necro_idle" or $AnimatedSprite2D.animation == "necro_walk_bottom":
+				$AnimatedSprite2D.play("attack_bottom")
+			if $AnimatedSprite2D.animation == "idle_right" or $AnimatedSprite2D.animation == "necro_walk_right":
+				$AnimatedSprite2D.play("attack_right")
+			if $AnimatedSprite2D.animation == "idle_left" or $AnimatedSprite2D.animation == "necro_walk_left":
+				$AnimatedSprite2D.play("attack_left")
+			if $AnimatedSprite2D.animation == "idle_top" or $AnimatedSprite2D.animation == "necro_walk_top":
+				$AnimatedSprite2D.play("attack_top")
 
 	move_and_slide()
+	
 	if !isHurt:
 		for enemyArea in enemyCollisions:
 			hurtByEnemy(enemyArea)
-	
+
+func _on_animated_sprite_2d_animation_finished():
+	if $AnimatedSprite2D.animation == "attack_bottom":
+		$AnimatedSprite2D.play("necro_idle")
+		is_attacking = false
+	elif $AnimatedSprite2D.animation == "attack_right":
+		$AnimatedSprite2D.play("idle_right")
+		is_attacking = false
+	elif $AnimatedSprite2D.animation == "attack_left":
+		$AnimatedSprite2D.play("idle_left")
+		is_attacking = false
+	elif $AnimatedSprite2D.animation == "attack_top":
+		$AnimatedSprite2D.play("idle_top")
+		is_attacking = false
+
 func hurtByEnemy(area):
 	currentHealth -= 1
 	if currentHealth < 0:
@@ -73,3 +114,7 @@ func knockback(enemyVelocity: Vector2):
 
 func _on_hurt_box_area_exited(area):
 	enemyCollisions.erase(area)
+
+
+func _on_sword_hit_area_entered(area):
+	pass # Replace with function body.

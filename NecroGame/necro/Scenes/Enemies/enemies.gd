@@ -10,6 +10,8 @@ var endPosition
 func _ready():
 	startPosition = position
 	endPosition = endPoint.global_position
+	$AnimatedSprite2D.play("enemy_walk_rl")
+
 
 func changeDirection():
 	var tempEnd = endPosition
@@ -24,8 +26,20 @@ func updateVelocity():
 	velocity = moveDirection.normalized()*speed
 	
 func updateAnimation():
-	if velocity.y > 0:
-		$AnimatedSprite2D.play("walk")
+	print(velocity.x)
+
+	# Primeiro, checamos o movimento horizontal
+	if velocity.x != 0:
+		$AnimatedSprite2D.flip_h = velocity.x < 0
+		$AnimatedSprite2D.play("enemy_walk_rl")
+
+	# Se não houver movimento horizontal, verificamos o vertical
+	elif velocity.y > 0:
+		$AnimatedSprite2D.play("enemy_walk_bottom")
+	elif velocity.y < 0:
+		$AnimatedSprite2D.play("enemy_walk_top")
+
+
 		
 
 func _physics_process(delta):

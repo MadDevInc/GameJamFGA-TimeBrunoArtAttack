@@ -37,7 +37,10 @@ func _physics_process(delta):
 	
 	if direction_y:
 		velocity.y = direction_y * SPEED
-		#$AnimatedSprite2D.play("moving_up_down")
+		if direction_y > 0:
+			$AnimatedSprite2D.play("necro_walk_bottom")
+		else:
+			$AnimatedSprite2D.play("necro_walk_top")
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 		

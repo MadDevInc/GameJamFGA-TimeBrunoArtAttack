@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 20
 @export var limit = 0.5
+@export var endPoint: Marker2D
 
 @onready var animations = $AnimatedSprite2D
 
@@ -10,7 +11,7 @@ var endPosition
 
 func _ready():
 	startPosition = position
-	endPosition = startPosition + Vector2(0, 3*16)
+	endPosition = endPoint.global_position
 
 func changeDirection():
 	var tempEnd = endPosition

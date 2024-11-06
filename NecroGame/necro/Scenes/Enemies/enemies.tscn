@@ -56,16 +56,17 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_831g4"]
 
 [node name="Enemies" type="CharacterBody2D"]
+position = Vector2(59, 35)
 script = ExtResource("1_52cai")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(99.25, 47)
+position = Vector2(1.81899e-12, -6)
 scale = Vector2(2.5, 2.14286)
 sprite_frames = SubResource("SpriteFrames_w27wu")
 animation = &"walk"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(98, 54)
+position = Vector2(-1, 2)
 shape = SubResource("CircleShape2D_831g4")

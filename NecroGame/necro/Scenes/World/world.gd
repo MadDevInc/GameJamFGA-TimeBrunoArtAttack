@@ -12,3 +12,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+var focused_object: CharacterBody2D
+
+func switch_focus(object: CharacterBody2D):
+	focused_object = object

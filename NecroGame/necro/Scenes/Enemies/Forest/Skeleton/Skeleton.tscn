@@ -1,54 +1,32 @@
-[gd_scene load_steps=24 format=3 uid="uid://chxm7u022syxj"]
+[gd_scene load_steps=20 format=3 uid="uid://chxm7u022syxj"]
 
-[ext_resource type="Texture2D" uid="uid://bla3r0j8ju6a2" path="res://Sprites/Enemies/Forest/Skeleton/MushroomWalkPlaceHolder.png" id="1_ksn2c"]
 [ext_resource type="Script" path="res://Scenes/Enemies/Forest/Skeleton/Skeleton.gd" id="1_vdd3v"]
-[ext_resource type="Texture2D" uid="uid://c0xa6xkp758fu" path="res://Sprites/UI/Attack_Target_Locked.png" id="3_1xhyr"]
-[ext_resource type="PackedScene" uid="uid://dyy3470ehetmv" path="res://scenes/Entity/HealthComponent.tscn" id="3_c6qvp"]
-[ext_resource type="Texture2D" uid="uid://dir3owvbkda7j" path="res://Sprites/UI/Attack_Target_Unlocked.png" id="4_y5kv7"]
+[ext_resource type="Texture2D" uid="uid://dc2l2x5wmhksy" path="res://Sprites/Necrogame sprites/enemy_attack_bottom.png" id="2_ma71s"]
+[ext_resource type="Texture2D" uid="uid://ckhrfj6ije3r3" path="res://Sprites/UI/Attack_Target_Locked.png" id="3_1xhyr"]
+[ext_resource type="Texture2D" uid="uid://b6pjy5gjw47p2" path="res://Sprites/Necrogame sprites/enemy_walk_bottom.png" id="3_4in1l"]
+[ext_resource type="PackedScene" uid="uid://dyy3470ehetmv" path="res://Scenes/Entity/HealthComponent.tscn" id="3_c6qvp"]
+[ext_resource type="Texture2D" uid="uid://186fe1am7jfw" path="res://Sprites/UI/Attack_Target_Unlocked.png" id="4_y5kv7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y74wx"]
 size = Vector2(6, 3)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cnduy"]
-atlas = ExtResource("1_ksn2c")
-region = Rect2(0, 0, 11, 14)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ibgg"]
+atlas = ExtResource("2_ma71s")
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3kmwq"]
-atlas = ExtResource("1_ksn2c")
-region = Rect2(55, 0, 11, 14)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt4cv"]
+atlas = ExtResource("3_4in1l")
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tja17"]
-atlas = ExtResource("1_ksn2c")
-region = Rect2(11, 0, 11, 14)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t0rr6"]
-atlas = ExtResource("1_ksn2c")
-region = Rect2(22, 0, 11, 14)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_77vhq"]
-atlas = ExtResource("1_ksn2c")
-region = Rect2(33, 0, 11, 14)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_67sph"]
-atlas = ExtResource("1_ksn2c")
-region = Rect2(44, 0, 11, 14)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mdqb0"]
-atlas = ExtResource("1_ksn2c")
-region = Rect2(55, 0, 11, 14)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yyqon"]
-atlas = ExtResource("1_ksn2c")
-region = Rect2(0, 0, 11, 14)
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2fph"]
+atlas = ExtResource("3_4in1l")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dorw2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cnduy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3kmwq")
+"texture": SubResource("AtlasTexture_7ibgg")
 }],
 "loop": true,
 "name": &"idle",
@@ -56,22 +34,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tja17")
+"texture": SubResource("AtlasTexture_bt4cv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t0rr6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_77vhq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_67sph")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mdqb0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yyqon")
+"texture": SubResource("AtlasTexture_f2fph")
 }],
 "loop": true,
 "name": &"walk",
@@ -148,10 +114,11 @@ shape = SubResource("RectangleShape2D_y74wx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_dorw2")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="TargetUI" type="AnimatedSprite2D" parent="."]
+visible = false
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pbrx2")
 animation = &"locked"
@@ -159,6 +126,7 @@ animation = &"locked"
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 5.0
 target_desired_distance = 5.0
+path_max_distance = 200.0
 debug_enabled = true
 debug_path_custom_color = Color(1, 0, 0, 1)
 

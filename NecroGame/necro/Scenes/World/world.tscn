@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgk3ta1vladm3"]
+[gd_scene load_steps=6 format=4 uid="uid://bgk3ta1vladm3"]
 
-[ext_resource type="PackedScene" uid="uid://46qcy21dsoc7" path="res://Scenes/Player/player.tscn" id="1_581yn"]
-[ext_resource type="PackedScene" uid="uid://5jjw1yha0sfm" path="res://Scenes/ground.tscn" id="2_fbujr"]
-[ext_resource type="PackedScene" uid="uid://xhl48uycu6pl" path="res://Scenes/Enemies/enemies.tscn" id="3_15fvu"]
+[ext_resource type="Script" path="res://scenes/World/world.gd" id="1_1sva8"]
+[ext_resource type="PackedScene" uid="uid://46qcy21dsoc7" path="res://scenes/Player/player.tscn" id="1_581yn"]
+[ext_resource type="PackedScene" uid="uid://5jjw1yha0sfm" path="res://scenes/ground.tscn" id="2_fbujr"]
+[ext_resource type="PackedScene" uid="uid://xhl48uycu6pl" path="res://scenes/Enemies/enemies.tscn" id="3_15fvu"]
+[ext_resource type="PackedScene" uid="uid://ddlipjgt3sc7p" path="res://scenes/GUI/heartsContainer.tscn" id="4_1ep2a"]
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_r61ud")
+script = ExtResource("1_1sva8")
+
+[node name="Player" parent="." instance=ExtResource("1_581yn")]
 
 [node name="Enemy" parent="." instance=ExtResource("5_k0g4u")]
 position = Vector2(242, 93)
@@ -13,5 +17,16 @@ position = Vector2(242, 93)
 [node name="PlayerTix" parent="." instance=ExtResource("4_kvku0")]
 position = Vector2(99, 83)
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_fy7mf")
+[node name="Marker2D" type="Marker2D" parent="Enemies"]
+position = Vector2(1, 124)
+
+[node name="Enemies2" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("3_15fvu")]
+position = Vector2(170, 162)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemies2"]
+position = Vector2(-125, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("4_1ep2a")]

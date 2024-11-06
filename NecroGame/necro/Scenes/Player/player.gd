@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 const SPEED = 50.0
 
+signal healthChanged
+
+@export var maxHealth = 3
+@onready var currentHealth: int = maxHealth
+
 func _physics_process(delta):
 
 	var direction_x = Input.get_axis("left", "right")
@@ -26,10 +31,7 @@ func _physics_process(delta):
 	
 	if direction_y:
 		velocity.y = direction_y * SPEED
-		if direction_y > 0:
-			$AnimatedSprite2D.play("necro_walk_bottom")
-		else:
-			$AnimatedSprite2D.play("necro_walk_top")
+		#$AnimatedSprite2D.play("moving_up_down")
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 		
@@ -38,4 +40,11 @@ func _physics_process(delta):
 
 
 func _on_hurt_box_area_entered(area):
-	pass # Replace with function body.
+	if area.name == 'hitBox':
+		currentHealth -= 1
+		if currentHealth < 0:
+			currentHealth = maxHealth
+			
+		healthChanged.emit(currentHealth)
+	
+	

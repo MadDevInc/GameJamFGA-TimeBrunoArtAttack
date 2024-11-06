@@ -13,11 +13,17 @@ func _physics_process(delta):
 	var direction_y = Input.get_axis("up", "down")
 	
 	if direction_x == 0 and direction_y == 0:
-		$AnimatedSprite2D.play("idle")
+		$AnimatedSprite2D.play("necro_idle")
 
 
 	if direction_x:
 		velocity.x = direction_x * SPEED
+		if direction_x > 0:
+			$AnimatedSprite2D.flip_h = false
+			$AnimatedSprite2D.play("necro_walk_rl")
+		else:
+			$AnimatedSprite2D.flip_h = true
+			$AnimatedSprite2D.play("necro_walk_rl")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		

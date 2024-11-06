@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var attack: int = 1
 
-const priority = ["skeleton", "player"]
+const priority = ["summon","player"]
 
 enum STATES {ACQUIRING_TARGET, CHANGING_TARGET, MOVING_TO_TARGET, ATTACKING}
 
@@ -24,7 +24,7 @@ var is_current_player_target : bool = false
 @onready var TargetUI: AnimatedSprite2D = $TargetUI
 
 func _ready():
-	TargetUI.hide()
+	#TargetUI.hide()
 	animation_player.speed_scale = attack_speed
 
 func set_movement_target(movement_target: Vector2):
@@ -55,6 +55,7 @@ func _physics_process(delta):
 
 func _on_vision_cone_body_entered(body):
 	if !body.is_in_group("enemy"):
+		print(body)
 		state = STATES.ACQUIRING_TARGET
 		if current_target != null:
 			var priority_check = check_target_priority(body.get_groups())

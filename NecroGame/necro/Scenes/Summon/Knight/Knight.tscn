@@ -1,0 +1,148 @@
+[gd_scene load_steps=17 format=3 uid="uid://drkfrq7sty762"]
+
+[ext_resource type="Texture2D" uid="uid://djl6v0sub4e0c" path="res://Sprites/Summon/Knight/SkeletonPlaceHolder.png" id="1_0ro7s"]
+[ext_resource type="Script" path="res://Scenes/Enemies/Forest/Skeleton/Skeleton.gd" id="1_1bco0"]
+[ext_resource type="PackedScene" uid="uid://dyy3470ehetmv" path="res://Scenes/Entity/HealthComponent.tscn" id="3_ctikw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erdlh"]
+size = Vector2(8, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8fvp"]
+atlas = ExtResource("1_0ro7s")
+region = Rect2(0, 0, 9, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgh11"]
+atlas = ExtResource("1_0ro7s")
+region = Rect2(9, 0, 9, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2brw2"]
+atlas = ExtResource("1_0ro7s")
+region = Rect2(18, 0, 9, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppjsa"]
+atlas = ExtResource("1_0ro7s")
+region = Rect2(27, 0, 9, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7i6yt"]
+atlas = ExtResource("1_0ro7s")
+region = Rect2(36, 0, 9, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wksi"]
+atlas = ExtResource("1_0ro7s")
+region = Rect2(45, 0, 9, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr7qa"]
+atlas = ExtResource("1_0ro7s")
+region = Rect2(54, 0, 9, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gdii"]
+atlas = ExtResource("1_0ro7s")
+region = Rect2(63, 0, 9, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nihju"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8fvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgh11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2brw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppjsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7i6yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wksi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr7qa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gdii")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 18.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jtj3d"]
+radius = 7.0
+
+[sub_resource type="Animation" id="Animation_a4uk0"]
+resource_name = "attack"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"deal_damage_to_current_target"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gp1ii"]
+_data = {
+"attack": SubResource("Animation_a4uk0")
+}
+
+[node name="Skeleton" type="CharacterBody2D" groups=["summon"]]
+script = ExtResource("1_1bco0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_erdlh")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 5.0
+target_desired_distance = 5.0
+debug_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_nihju")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="Range" type="Area2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_jtj3d")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_ctikw")]
+offset_left = -7.0
+offset_top = -10.0
+offset_right = 7.0
+offset_bottom = -7.0
+texture_under = null
+texture_progress = null
+health = 1
+bar_color = Color(0, 1, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gp1ii")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = -76.0
+offset_top = -33.0
+offset_right = 86.0
+offset_bottom = -10.0
+text = "MOVING_TO_TARGET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

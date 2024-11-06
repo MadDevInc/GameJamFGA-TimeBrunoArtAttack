@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://46qcy21dsoc7"]
+[gd_scene load_steps=20 format=3 uid="uid://46qcy21dsoc7"]
 
 [ext_resource type="Script" path="res://scenes/Player/player.gd" id="1_02oea"]
 [ext_resource type="Texture2D" uid="uid://c55f0fv0snabd" path="res://sprites/player/Sword_Idle_full.png" id="1_ldjpg"]
@@ -111,6 +111,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_b654q"]
 radius = 9.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e2h57"]
+radius = 8.0
+height = 34.0
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(75, 51)
 script = ExtResource("1_02oea")
@@ -126,3 +130,13 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_b654q")
+
+[node name="hurtBox" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_e2h57")
+debug_color = Color(0.930832, 2.65682e-05, 0.655202, 0.42)
+
+[connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]

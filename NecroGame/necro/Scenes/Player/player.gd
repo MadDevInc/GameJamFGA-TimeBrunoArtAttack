@@ -13,11 +13,6 @@ func _physics_process(delta):
 
 	if direction_x:
 		velocity.x = direction_x * SPEED
-		print(velocity)
-		#if direction_x == "left":
-			#$AnimatedSprite2D.play("moving_sides")
-		#else:
-			#$AnimatedSprite2D.play("moving_sides")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
@@ -31,3 +26,7 @@ func _physics_process(delta):
 		
 
 	move_and_slide()
+
+
+func _on_hurt_box_area_entered(area):
+	pass # Replace with function body.

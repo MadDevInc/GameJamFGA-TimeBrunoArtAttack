@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://ba12u37k6dgw4"]
 
 [ext_resource type="Script" path="res://Scenes/PlayerTix/PlayerTix.gd" id="1_xjcnv"]
-[ext_resource type="Texture2D" uid="uid://td5ametkns4h" path="res://Sprites/player/necro/necro.png" id="2_ka35o"]
+[ext_resource type="Texture2D" uid="uid://4t8p6cyk6hhk" path="res://Sprites/player/necro/necro.png" id="2_ka35o"]
 [ext_resource type="PackedScene" uid="uid://dyy3470ehetmv" path="res://Scenes/Entity/HealthComponent.tscn" id="4_qittk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pyq3b"]
-size = Vector2(7, 3)
+size = Vector2(5.5, 12.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fyvgg"]
 atlas = ExtResource("2_ka35o")
@@ -38,7 +38,7 @@ animations = [{
 script = ExtResource("1_xjcnv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 1.5)
+position = Vector2(-3.25, 0.25)
 shape = SubResource("RectangleShape2D_pyq3b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

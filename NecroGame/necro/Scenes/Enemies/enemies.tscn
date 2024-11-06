@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://xhl48uycu6pl"]
 
-[ext_resource type="Texture2D" uid="uid://dsl27g2ipip26" path="res://Sprites/Enemies/Forest/Skeleton/MushroomWalkPlaceHolder.png" id="1_0owcj"]
+[ext_resource type="Texture2D" uid="uid://bla3r0j8ju6a2" path="res://Sprites/Enemies/Forest/Skeleton/MushroomWalkPlaceHolder.png" id="1_0owcj"]
 [ext_resource type="Script" path="res://Scenes/Enemies/enemies.gd" id="1_52cai"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2muh"]

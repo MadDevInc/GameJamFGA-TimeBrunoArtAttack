@@ -1,26 +1,22 @@
-[gd_scene load_steps=4 format=4 uid="uid://bgk3ta1vladm3"]
+[gd_scene load_steps=5 format=3 uid="uid://bgk3ta1vladm3"]
 
-[ext_resource type="PackedScene" uid="uid://46qcy21dsoc7" path="res://scenes/Player/player.tscn" id="1_581yn"]
-[ext_resource type="PackedScene" uid="uid://5jjw1yha0sfm" path="res://scenes/ground.tscn" id="2_fbujr"]
-[ext_resource type="PackedScene" uid="uid://xhl48uycu6pl" path="res://scenes/Enemies/enemies.tscn" id="3_15fvu"]
+[ext_resource type="Script" path="res://Scenes/World/world.gd" id="1_r61ud"]
+[ext_resource type="PackedScene" uid="uid://ba12u37k6dgw4" path="res://Scenes/PlayerTix/PlayerTix.tscn" id="4_kvku0"]
+[ext_resource type="PackedScene" uid="uid://chxm7u022syxj" path="res://Scenes/Enemies/Forest/Skeleton/Skeleton.tscn" id="5_k0g4u"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fy7mf"]
+vertices = PackedVector2Array(340.141, 207, 10.0469, 207, 10.9531, 12, 342.859, 12)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1, 2, 0, 217, 350, 217, 353, 2)])
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_r61ud")
 
-[node name="Player" parent="." instance=ExtResource("1_581yn")]
+[node name="Enemy" parent="." instance=ExtResource("5_k0g4u")]
+position = Vector2(242, 93)
 
-[node name="Ground" parent="." instance=ExtResource("2_fbujr")]
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAlAAAAAAAAAAAAAAAmAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAA=")
+[node name="PlayerTix" parent="." instance=ExtResource("4_kvku0")]
+position = Vector2(99, 83)
 
-[node name="Enemies" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("3_15fvu")]
-position = Vector2(281, 24)
-endPoint = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="Enemies"]
-position = Vector2(1, 124)
-
-[node name="Enemies2" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("3_15fvu")]
-position = Vector2(170, 162)
-endPoint = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="Enemies2"]
-position = Vector2(-125, 2)
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_fy7mf")

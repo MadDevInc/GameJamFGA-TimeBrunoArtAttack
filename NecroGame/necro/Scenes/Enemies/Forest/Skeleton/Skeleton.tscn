@@ -1,10 +1,10 @@
 [gd_scene load_steps=24 format=3 uid="uid://chxm7u022syxj"]
 
-[ext_resource type="Texture2D" uid="uid://bla3r0j8ju6a2" path="res://Sprites/Enemies/Forest/Skeleton/MushroomWalkPlaceHolder.png" id="1_ksn2c"]
+[ext_resource type="Texture2D" uid="uid://dsl27g2ipip26" path="res://Sprites/Enemies/Forest/Skeleton/MushroomWalkPlaceHolder.png" id="1_ksn2c"]
 [ext_resource type="Script" path="res://Scenes/Enemies/Forest/Skeleton/Skeleton.gd" id="1_vdd3v"]
-[ext_resource type="Texture2D" uid="uid://c0xa6xkp758fu" path="res://Sprites/UI/Attack_Target_Locked.png" id="3_1xhyr"]
-[ext_resource type="PackedScene" uid="uid://dyy3470ehetmv" path="res://scenes/Entity/HealthComponent.tscn" id="3_c6qvp"]
-[ext_resource type="Texture2D" uid="uid://dir3owvbkda7j" path="res://Sprites/UI/Attack_Target_Unlocked.png" id="4_y5kv7"]
+[ext_resource type="Texture2D" uid="uid://djy0ea2njp248" path="res://Sprites/UI/Attack_Target_Locked.png" id="3_1xhyr"]
+[ext_resource type="PackedScene" uid="uid://dyy3470ehetmv" path="res://Scenes/Entity/HealthComponent.tscn" id="3_c6qvp"]
+[ext_resource type="Texture2D" uid="uid://c3lat6g5olf3g" path="res://Sprites/UI/Attack_Target_Unlocked.png" id="4_y5kv7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y74wx"]
 size = Vector2(6, 3)
@@ -152,6 +152,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="TargetUI" type="AnimatedSprite2D" parent="."]
+visible = false
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pbrx2")
 animation = &"locked"
@@ -159,6 +160,7 @@ animation = &"locked"
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 5.0
 target_desired_distance = 5.0
+path_max_distance = 200.0
 debug_enabled = true
 debug_path_custom_color = Color(1, 0, 0, 1)
 

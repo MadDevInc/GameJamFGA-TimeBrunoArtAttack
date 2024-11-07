@@ -18,7 +18,7 @@ var attack : bool = false
 var is_attacking : bool = false
 
 func _physics_process(delta):
-	$Label.text = ("animation: " + $AnimatedSprite2D.animation + "\n is attacking: "+ str(is_attacking) + "\nvelocity: " + str(velocity))
+	#$Label.text = ("animation: " + $AnimatedSprite2D.animation + "\n is attacking: "+ str(is_attacking) + "\nvelocity: " + str(velocity))
 
 	var direction_x = Input.get_axis("left", "right")
 	var direction_y = Input.get_axis("up", "down")
@@ -35,21 +35,18 @@ func _physics_process(delta):
 			velocity.y = move_toward(velocity.y, 0, SPEED)
 
 		if direction_x > 0:
-			$AnimatedSprite2D.flip_h = false
 			$AnimatedSprite2D.play("necro_walk_right")
 		elif direction_x < 0:
-			$AnimatedSprite2D.flip_h = true
-			$AnimatedSprite2D.play("necro_walk_right")
+			$AnimatedSprite2D.play("necro_walk_left")
 		elif direction_y > 0:
 			$AnimatedSprite2D.play("necro_walk_bottom")
 		elif direction_y < 0:
 			$AnimatedSprite2D.play("necro_walk_top")
 		
 		if direction_x == 0 and direction_y == 0:
-			if $AnimatedSprite2D.flip_h == false and $AnimatedSprite2D.animation == "necro_walk_right":
+			if $AnimatedSprite2D.animation == "necro_walk_right":
 				$AnimatedSprite2D.play("idle_right")
-			elif $AnimatedSprite2D.flip_h == true and $AnimatedSprite2D.animation == "necro_walk_right":
-				$AnimatedSprite2D.flip_h = false
+			elif $AnimatedSprite2D.animation == "necro_walk_left":
 				$AnimatedSprite2D.play("idle_left")
 			elif $AnimatedSprite2D.animation == "necro_walk_bottom":
 				$AnimatedSprite2D.play("necro_idle")
@@ -76,15 +73,23 @@ func _physics_process(delta):
 
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "attack_bottom":
+		$swordHit.position = Vector2(1, 5)
+		$swordHit.monitoring = true
 		$AnimatedSprite2D.play("necro_idle")
 		is_attacking = false
 	elif $AnimatedSprite2D.animation == "attack_right":
+		$swordHit.position = Vector2(11, -5)
+		$swordHit.monitoring = true
 		$AnimatedSprite2D.play("idle_right")
 		is_attacking = false
 	elif $AnimatedSprite2D.animation == "attack_left":
+		$swordHit.position = Vector2(-10, -3)
+		$swordHit.monitoring = true
 		$AnimatedSprite2D.play("idle_left")
 		is_attacking = false
 	elif $AnimatedSprite2D.animation == "attack_top":
+		$swordHit.position = Vector2(0, -4)
+		$swordHit.monitoring = true
 		$AnimatedSprite2D.play("idle_top")
 		is_attacking = false
 
@@ -114,7 +119,3 @@ func knockback(enemyVelocity: Vector2):
 
 func _on_hurt_box_area_exited(area):
 	enemyCollisions.erase(area)
-
-
-func _on_sword_hit_area_entered(area):
-	pass # Replace with function body.

@@ -15,6 +15,12 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAA
 
 [node name="Player" parent="." instance=ExtResource("1_581yn")]
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 1040
+limit_bottom = 576
+
 [node name="Enemies" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("3_15fvu")]
 position = Vector2(284, 52)
 endPoint = NodePath("Marker2D")

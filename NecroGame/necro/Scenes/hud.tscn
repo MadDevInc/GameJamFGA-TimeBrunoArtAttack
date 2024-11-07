@@ -3,8 +3,10 @@
 [node name="HUD" type="CanvasLayer"]
 
 [node name="cashLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -57.0
+offset_top = -19.0
+offset_right = 74.0
+offset_bottom = 40.0
 text = "$"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://xhl48uycu6pl"]
+[gd_scene load_steps=19 format=3 uid="uid://xhl48uycu6pl"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/enemies.gd" id="1_52cai"]
 [ext_resource type="Texture2D" uid="uid://b5xrlgorfiuy5" path="res://Sprites/Necrogame sprites/enemy_walk_bottom.png" id="2_7nm1j"]
+[ext_resource type="Texture2D" uid="uid://tv5dk8gmhcrc" path="res://Sprites/Necromantix/enemy_walk_left.png" id="3_51jng"]
 [ext_resource type="Texture2D" uid="uid://8ugv5amuneje" path="res://Sprites/Necrogame sprites/enemy_walk_rl.png" id="3_fcnvw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cebvb"]
@@ -11,6 +12,22 @@ region = Rect2(0, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_iy3ww"]
 atlas = ExtResource("2_7nm1j")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xddb"]
+atlas = ExtResource("3_51jng")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2epa"]
+atlas = ExtResource("3_51jng")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxuyq"]
+atlas = ExtResource("3_51jng")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xq0i"]
+atlas = ExtResource("3_51jng")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_krglg"]
 atlas = ExtResource("3_fcnvw")
@@ -47,6 +64,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_6xddb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2epa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxuyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xq0i")
+}],
+"loop": true,
+"name": &"enemy_walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_krglg")
 }, {
 "duration": 1.0,
@@ -59,7 +93,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_gfctl")
 }],
 "loop": true,
-"name": &"enemy_walk_rl",
+"name": &"enemy_walk_right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -86,9 +120,8 @@ script = ExtResource("1_52cai")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1.81899e-12, -6)
-scale = Vector2(2.5, 2.14286)
 sprite_frames = SubResource("SpriteFrames_w27wu")
-animation = &"enemy_walk_top"
+animation = &"enemy_walk_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 2)

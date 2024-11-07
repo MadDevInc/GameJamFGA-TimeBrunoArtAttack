@@ -1,5 +1,4 @@
 [gd_scene load_steps=45 format=3 uid="uid://46qcy21dsoc7"]
-[gd_scene load_steps=45 format=3 uid="uid://46qcy21dsoc7"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_02oea"]
 [ext_resource type="Texture2D" uid="uid://60jfmx3jyno5" path="res://Sprites/Esqueleto/skeleton_attack_bottom.png" id="2_uqmw3"]
@@ -330,7 +329,6 @@ offset_right = 34.0
 offset_bottom = -21.0
 text = "ALO ALO"
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("CircleShape2D_i03cq")

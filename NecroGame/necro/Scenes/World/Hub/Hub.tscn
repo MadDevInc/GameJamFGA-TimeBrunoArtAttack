@@ -1,11 +1,12 @@
-[gd_scene load_steps=14 format=4 uid="uid://cygld0mlfw0s6"]
+[gd_scene load_steps=15 format=4 uid="uid://cygld0mlfw0s6"]
 
 [ext_resource type="Script" path="res://Scenes/World/Hub/hub.gd" id="1_oi3vg"]
-[ext_resource type="Texture2D" uid="uid://ret7ewvux6bm" path="res://Sprites/SafeHouse/selo_invocação.png" id="2_cy1lx"]
+[ext_resource type="Texture2D" uid="uid://cub27mjvdkuem" path="res://Sprites/SafeHouse/selo_invocação.png" id="2_cy1lx"]
 [ext_resource type="PackedScene" uid="uid://b0uet66nco2oo" path="res://Scenes/World/Hub/groundSafe.tscn" id="2_dxcfp"]
 [ext_resource type="PackedScene" uid="uid://0s2rw8at0hym" path="res://Scenes/World/Hub/pilastra.tscn" id="3_1oio2"]
 [ext_resource type="PackedScene" uid="uid://46qcy21dsoc7" path="res://Scenes/Player/player.tscn" id="3_a0hsu"]
 [ext_resource type="PackedScene" uid="uid://bw5qj37rjijqv" path="res://Scenes/World/Hub/book.tscn" id="6_58u8x"]
+[ext_resource type="PackedScene" uid="uid://mlvsldneumda" path="res://Scenes/World/Hub/Shop/Shop.tscn" id="7_nakse"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2yp1d"]
 atlas = ExtResource("2_cy1lx")
@@ -64,7 +65,7 @@ position = Vector2(263, 120)
 tile_map_data = PackedByteArray("AAAMAAgAAAAGAAQAAAAMAAkAAAAGAAUAAAAMAAoAAAAGAAYAAAAUAAgAAAAGAAQAAAAUAAkAAAAGAAUAAAAUAAoAAAAGAAYAAAAUAAsAAAAGAAQAAAAUAAwAAAAGAAUAAAAUAA0AAAAGAAYAAAAUAA4AAAAGAAQAAAAUAA8AAAAGAAUAAAAUABAAAAAGAAYAAAAUABEAAAAGAAQAAAAUABIAAAAGAAUAAAAUABMAAAAGAAYAAAAMAAsAAAAGAAQAAAAMAAwAAAAGAAUAAAAMAA0AAAAGAAYAAAAMAA4AAAAGAAQAAAAMAA8AAAAGAAUAAAAMABAAAAAGAAYAAAAMABEAAAAGAAQAAAAMABIAAAAGAAUAAAAMABMAAAAGAAYAAAA=")
 
 [node name="Portal" type="Area2D" parent="."]
-position = Vector2(682, 224)
+position = Vector2(465, 216)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Portal"]
 sprite_frames = SubResource("SpriteFrames_fj03i")
@@ -74,7 +75,7 @@ frame_progress = 0.700938
 shape = SubResource("CircleShape2D_vw67d")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("3_a0hsu")]
-position = Vector2(518, 420)
+position = Vector2(375, 214)
 
 [node name="book" parent="." instance=ExtResource("6_58u8x")]
 position = Vector2(283, 197)
@@ -83,5 +84,11 @@ position = Vector2(283, 197)
 position = Vector2(518, 290)
 zoom = Vector2(2, 2)
 
+[node name="Shop" parent="." instance=ExtResource("7_nakse")]
+visible = false
+position = Vector2(362, 168)
+
 [connection signal="body_entered" from="Portal" to="." method="_on_portal_body_entered"]
 [connection signal="body_exited" from="Portal" to="." method="_on_portal_body_exited"]
+[connection signal="body_entered" from="book" to="." method="_on_book_body_entered"]
+[connection signal="body_exited" from="book" to="." method="_on_book_body_exited"]

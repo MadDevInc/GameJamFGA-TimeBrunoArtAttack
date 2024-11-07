@@ -1,7 +1,7 @@
 [gd_scene load_steps=43 format=3 uid="uid://bw5qj37rjijqv"]
 
-[ext_resource type="Texture2D" uid="uid://cpoufcufwm0sb" path="res://Sprites/SafeHouse/livro_upgrade.png" id="1_4lp8v"]
-[ext_resource type="Texture2D" uid="uid://coddacfj5qc31" path="res://Sprites/SafeHouse/livro_upgrade_aberto.png" id="2_u3r1e"]
+[ext_resource type="Texture2D" uid="uid://dytlcfpuyjwhd" path="res://Sprites/SafeHouse/livro_upgrade.png" id="1_4lp8v"]
+[ext_resource type="Texture2D" uid="uid://bm2508r81d4wg" path="res://Sprites/SafeHouse/livro_upgrade_aberto.png" id="2_u3r1e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2d30g"]
 atlas = ExtResource("1_4lp8v")
@@ -282,8 +282,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qm568"]
-radius = 84.2912
+[sub_resource type="CircleShape2D" id="CircleShape2D_s27h4"]
+radius = 40.42
 
 [node name="book" type="Area2D"]
 position = Vector2(112, 97)
@@ -296,4 +296,4 @@ frame = 9
 frame_progress = 0.0713078
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_qm568")
+shape = SubResource("CircleShape2D_s27h4")

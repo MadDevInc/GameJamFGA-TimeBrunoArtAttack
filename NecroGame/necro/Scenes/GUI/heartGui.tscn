@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://2174oul7ey71"]
 
-[ext_resource type="Texture2D" uid="uid://cid7nrkuknhm8" path="res://Art/heartshealth.png" id="1_k5p1i"]
 [ext_resource type="Script" path="res://Scenes/GUI/heartGui.gd" id="1_uomwf"]
+[ext_resource type="Texture2D" uid="uid://d21mx31w8pabv" path="res://Sprites/Necromantix/life_hub.png" id="2_asjqy"]
 
 [node name="heartGui" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -13,7 +13,8 @@ offset_bottom = 38.0
 script = ExtResource("1_uomwf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-7, -7)
-texture = ExtResource("1_k5p1i")
+position = Vector2(-1, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("2_asjqy")
 centered = false
-hframes = 5
+hframes = 3

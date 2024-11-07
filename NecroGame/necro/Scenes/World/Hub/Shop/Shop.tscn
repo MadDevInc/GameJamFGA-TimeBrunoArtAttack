@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=3 uid="uid://mlvsldneumda"]
+
+[ext_resource type="Script" path="res://Scenes/World/Hub/Shop/shop.gd" id="1_7aqu1"]
+[ext_resource type="Texture2D" uid="uid://bgnxd68le4gor" path="res://Sprites/tix/vida.png" id="2_vp8uo"]
+[ext_resource type="Texture2D" uid="uid://doug8g4148icv" path="res://Sprites/tix/dano.png" id="3_5ayf4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ny7ah"]
+bg_color = Color(0.368496, 0.259291, 0.43009, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.57624, 0.781236, 0.392598, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4oa7"]
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_7aqu1")
+
+[node name="Background" type="Panel" parent="."]
+offset_right = 404.0
+offset_bottom = 272.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ny7ah")
+metadata/_edit_lock_ = true
+
+[node name="Vida" type="Panel" parent="."]
+offset_left = 48.0
+offset_top = 24.0
+offset_right = 382.0
+offset_bottom = 106.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m4oa7")
+
+[node name="Label" type="Label" parent="Vida"]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 56.0
+offset_bottom = 23.0
+text = "Vida"
+
+[node name="Vida" type="Sprite2D" parent="Vida"]
+position = Vector2(40, 38)
+texture = ExtResource("2_vp8uo")
+
+[node name="BtnComprar" type="Button" parent="Vida"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 18.0
+offset_right = 318.0
+offset_bottom = 67.0
+text = "Comprar"
+
+[node name="Descricao" type="Label" parent="Vida"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 16.0
+offset_right = 204.0
+offset_bottom = 65.0
+text = "+1 ponto de vida
+Custa 100 gold"
+
+[node name="Dano" type="Panel" parent="."]
+offset_left = 48.0
+offset_top = 112.0
+offset_right = 382.0
+offset_bottom = 194.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m4oa7")
+
+[node name="Label" type="Label" parent="Dano"]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 56.0
+offset_bottom = 23.0
+text = "Dano"
+
+[node name="Dano" type="Sprite2D" parent="Dano"]
+position = Vector2(40, 48)
+texture = ExtResource("3_5ayf4")
+
+[node name="BtnComprar" type="Button" parent="Dano"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 18.0
+offset_right = 318.0
+offset_bottom = 67.0
+text = "Comprar"
+
+[node name="Descricao" type="Label" parent="Dano"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 16.0
+offset_right = 204.0
+offset_bottom = 65.0
+text = "+1 dano de ataque
+Custa 100 gold"
+
+[node name="Fechar" type="Panel" parent="."]
+offset_left = 341.0
+offset_top = 215.0
+offset_right = 381.0
+offset_bottom = 255.0
+
+[node name="BtnFechar" type="Button" parent="Fechar"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 38.0
+offset_bottom = 34.0
+text = "sair"
+
+[connection signal="pressed" from="Vida/BtnComprar" to="." method="_on_vida_buy"]
+[connection signal="pressed" from="Dano/BtnComprar" to="." method="_on_dano_buy"]
+[connection signal="pressed" from="Fechar/BtnFechar" to="." method="_on_btn_fechar_pressed"]

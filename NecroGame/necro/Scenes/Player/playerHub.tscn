@@ -1,124 +1,124 @@
-[gd_scene load_steps=45 format=3 uid="uid://46qcy21dsoc7"]
+[gd_scene load_steps=44 format=3 uid="uid://yi08j1hjrb4l"]
 
-[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_02oea"]
-[ext_resource type="Texture2D" uid="uid://ctepl8nbfkn0g" path="res://Sprites/Esqueleto/skeleton_attack_bottom.png" id="2_uqmw3"]
-[ext_resource type="Texture2D" uid="uid://bsweig1ith810" path="res://Sprites/Necrogame sprites/necro.png" id="3_1gqqv"]
-[ext_resource type="Texture2D" uid="uid://byrletg15d868" path="res://Sprites/Esqueleto/skeleton_attack_rl.png" id="3_13j1c"]
-[ext_resource type="Texture2D" uid="uid://m7bwoqh6jcje" path="res://Sprites/Necrogame sprites/skeleton_attack_left.png" id="3_kx2vo"]
-[ext_resource type="Texture2D" uid="uid://bys6h0tat67xw" path="res://Sprites/Esqueleto/skeleton_attack_top.png" id="4_jajwv"]
-[ext_resource type="Texture2D" uid="uid://c4ynojoj83od0" path="res://Sprites/Necrogame sprites/necro_walk_bottom.png" id="4_r0pst"]
-[ext_resource type="Texture2D" uid="uid://dxa7djag3awrp" path="res://Sprites/Esqueleto/skeleton_walk_left.png" id="5_7jion"]
-[ext_resource type="Texture2D" uid="uid://cfhs2p0wojyw8" path="res://Sprites/Necrogame sprites/necro_walk_top.png" id="5_gwklw"]
-[ext_resource type="Texture2D" uid="uid://deskr0ipfp305" path="res://Sprites/Necrogame sprites/necro_walk_rl.png" id="5_nejrf"]
-[ext_resource type="Texture2D" uid="uid://dhw6gx2mg70uy" path="res://Sprites/Esqueleto/skeleton_walk_rl.png" id="6_m7pvv"]
-[ext_resource type="Texture2D" uid="uid://dui6hbfesdmsj" path="res://Sprites/Necrogame sprites/necro_walk_left.png" id="10_u3h2o"]
+[ext_resource type="Script" path="res://Scenes/Player/playerHub.gd" id="1_t4c1l"]
+[ext_resource type="Texture2D" uid="uid://60jfmx3jyno5" path="res://Sprites/Esqueleto/skeleton_attack_bottom.png" id="2_ek4oh"]
+[ext_resource type="Texture2D" uid="uid://bxaianpsby2f1" path="res://Sprites/Necrogame sprites/skeleton_attack_left.png" id="3_tps2l"]
+[ext_resource type="Texture2D" uid="uid://ceajiqvbmqluy" path="res://Sprites/Esqueleto/skeleton_attack_rl.png" id="4_qk8ik"]
+[ext_resource type="Texture2D" uid="uid://swcbg280rx5d" path="res://Sprites/Esqueleto/skeleton_attack_top.png" id="5_yhfha"]
+[ext_resource type="Texture2D" uid="uid://bntclkvf6u5pf" path="res://Sprites/Necromantix/necro_walk_left.png" id="6_otw00"]
+[ext_resource type="Texture2D" uid="uid://b4vo3viivyyy8" path="res://Sprites/Necromantix/necro_idle_top.png" id="8_gtdky"]
+[ext_resource type="Texture2D" uid="uid://blmfqdw0y10du" path="res://Sprites/Necrogame sprites/necro.png" id="9_tfwiq"]
+[ext_resource type="Texture2D" uid="uid://ccs3m43p7rem0" path="res://Sprites/Necromantix/necro_walk_bottom.png" id="10_swg0o"]
+[ext_resource type="Texture2D" uid="uid://d0h650kfnwux2" path="res://Sprites/Necrogame sprites/necro_walk_left.png" id="11_uhylo"]
+[ext_resource type="Texture2D" uid="uid://d2j55bnjda6hp" path="res://Sprites/Necrogame sprites/necro_walk_rl.png" id="12_53n1b"]
+[ext_resource type="Texture2D" uid="uid://cn2uffh3c7nip" path="res://Sprites/Necrogame sprites/necro_walk_top.png" id="13_hwh61"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tjxo2"]
-atlas = ExtResource("2_uqmw3")
+atlas = ExtResource("2_ek4oh")
 region = Rect2(0, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oij5s"]
-atlas = ExtResource("2_uqmw3")
+atlas = ExtResource("2_ek4oh")
 region = Rect2(16, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ysi2t"]
-atlas = ExtResource("2_uqmw3")
+atlas = ExtResource("2_ek4oh")
 region = Rect2(32, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h3pcl"]
-atlas = ExtResource("3_kx2vo")
+atlas = ExtResource("3_tps2l")
 region = Rect2(64, 0, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uawxx"]
-atlas = ExtResource("3_kx2vo")
+atlas = ExtResource("3_tps2l")
 region = Rect2(32, 0, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkgpw"]
-atlas = ExtResource("3_kx2vo")
+atlas = ExtResource("3_tps2l")
 region = Rect2(0, 0, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g85pw"]
-atlas = ExtResource("3_13j1c")
+atlas = ExtResource("4_qk8ik")
 region = Rect2(0, 0, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1qi1m"]
-atlas = ExtResource("3_13j1c")
+atlas = ExtResource("4_qk8ik")
 region = Rect2(32, 0, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_teduf"]
-atlas = ExtResource("3_13j1c")
+atlas = ExtResource("4_qk8ik")
 region = Rect2(64, 0, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xy64b"]
-atlas = ExtResource("4_jajwv")
+atlas = ExtResource("5_yhfha")
 region = Rect2(0, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vymi8"]
-atlas = ExtResource("4_jajwv")
+atlas = ExtResource("5_yhfha")
 region = Rect2(16, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ep5fj"]
-atlas = ExtResource("4_jajwv")
+atlas = ExtResource("5_yhfha")
 region = Rect2(32, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g6880"]
-atlas = ExtResource("5_7jion")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohqro"]
+atlas = ExtResource("6_otw00")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fn1hy"]
-atlas = ExtResource("6_m7pvv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcx8h"]
+atlas = ExtResource("12_53n1b")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_chjpa"]
-atlas = ExtResource("4_jajwv")
-region = Rect2(0, 0, 16, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ed3d"]
+atlas = ExtResource("8_gtdky")
+region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rof8i"]
-atlas = ExtResource("4_r0pst")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pjn6"]
+atlas = ExtResource("10_swg0o")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r0lo5"]
-atlas = ExtResource("4_r0pst")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngnkv"]
+atlas = ExtResource("10_swg0o")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gf58q"]
-atlas = ExtResource("10_u3h2o")
+atlas = ExtResource("11_uhylo")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vausl"]
-atlas = ExtResource("10_u3h2o")
+atlas = ExtResource("11_uhylo")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2gqxp"]
-atlas = ExtResource("10_u3h2o")
+atlas = ExtResource("11_uhylo")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_80a4u"]
-atlas = ExtResource("10_u3h2o")
+atlas = ExtResource("11_uhylo")
 region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u52oc"]
-atlas = ExtResource("5_nejrf")
-region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_635xx"]
-atlas = ExtResource("5_nejrf")
+atlas = ExtResource("12_53n1b")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m1glh"]
-atlas = ExtResource("5_nejrf")
-region = Rect2(32, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_u52oc"]
+atlas = ExtResource("12_53n1b")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dsjy1"]
-atlas = ExtResource("5_nejrf")
+atlas = ExtResource("12_53n1b")
 region = Rect2(48, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1glh"]
+atlas = ExtResource("12_53n1b")
+region = Rect2(32, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_7g71u"]
-atlas = ExtResource("5_gwklw")
+atlas = ExtResource("13_hwh61")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y75jl"]
-atlas = ExtResource("5_gwklw")
+atlas = ExtResource("13_hwh61")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xbxkd"]
@@ -181,7 +181,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g6880")
+"texture": SubResource("AtlasTexture_ohqro")
 }],
 "loop": true,
 "name": &"idle_left",
@@ -189,7 +189,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fn1hy")
+"texture": SubResource("AtlasTexture_hcx8h")
 }],
 "loop": true,
 "name": &"idle_right",
@@ -197,7 +197,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_chjpa")
+"texture": SubResource("AtlasTexture_0ed3d")
 }],
 "loop": true,
 "name": &"idle_top",
@@ -205,7 +205,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_1gqqv")
+"texture": ExtResource("9_tfwiq")
 }],
 "loop": true,
 "name": &"necro_idle",
@@ -213,14 +213,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rof8i")
+"texture": SubResource("AtlasTexture_6pjn6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r0lo5")
+"texture": SubResource("AtlasTexture_ngnkv")
 }],
 "loop": true,
 "name": &"necro_walk_bottom",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -241,16 +241,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u52oc")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_635xx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m1glh")
+"texture": SubResource("AtlasTexture_u52oc")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dsjy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1glh")
 }],
 "loop": true,
 "name": &"necro_walk_right",
@@ -265,50 +265,54 @@ animations = [{
 }],
 "loop": true,
 "name": &"necro_walk_top",
-"speed": 3.0
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ns6sv"]
 radius = 7.18368
 height = 14.3674
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_b654q"]
+radius = 9.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e2h57"]
 radius = 8.0
 height = 34.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ure4k"]
-size = Vector2(12, 23)
-
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(75, 51)
-script = ExtResource("1_02oea")
+script = ExtResource("1_t4c1l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1, -4)
-scale = Vector2(1.60938, 1.53125)
 sprite_frames = SubResource("SpriteFrames_xbxkd")
-animation = &"idle_left"
+animation = &"necro_walk_bottom"
 autoplay = "necro_idle"
 
 [node name="swordHit" type="Area2D" parent="."]
 position = Vector2(0, -4)
 scale = Vector2(1.60938, 1.53125)
 collision_layer = 4
-collision_mask = 4
+collision_mask = 0
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="swordHit"]
 shape = SubResource("CapsuleShape2D_ns6sv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_b654q")
 disabled = true
 
 [node name="hurtBox" type="Area2D" parent="."]
-collision_layer = 4
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
 position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_e2h57")
+disabled = true
 debug_color = Color(0.930832, 2.65682e-05, 0.655202, 0.42)
 
 [node name="hurtTimer" type="Timer" parent="."]
@@ -321,10 +325,6 @@ offset_top = -44.0
 offset_right = 34.0
 offset_bottom = -21.0
 text = "ALO ALO"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3.5)
-shape = SubResource("RectangleShape2D_ure4k")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="swordHit" to="." method="_on_sword_hit_area_entered"]

@@ -74,22 +74,22 @@ func _physics_process(delta):
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "attack_bottom":
 		$swordHit.position = Vector2(1, 5)
-		$swordHit.monitoring = true
+		$swordHit.monitoring == true
 		$AnimatedSprite2D.play("necro_idle")
 		is_attacking = false
 	elif $AnimatedSprite2D.animation == "attack_right":
 		$swordHit.position = Vector2(11, -5)
-		$swordHit.monitoring = true
+		$swordHit.monitoring == true
 		$AnimatedSprite2D.play("idle_right")
 		is_attacking = false
 	elif $AnimatedSprite2D.animation == "attack_left":
 		$swordHit.position = Vector2(-10, -3)
-		$swordHit.monitoring = true
+		$swordHit.monitoring == true
 		$AnimatedSprite2D.play("idle_left")
 		is_attacking = false
 	elif $AnimatedSprite2D.animation == "attack_top":
 		$swordHit.position = Vector2(0, -4)
-		$swordHit.monitoring = true
+		$swordHit.monitoring == true
 		$AnimatedSprite2D.play("idle_top")
 		is_attacking = false
 
@@ -115,7 +115,3 @@ func knockback(enemyVelocity: Vector2):
 	var knockbackDirection = (enemyVelocity - velocity).normalized() * knockbackPower
 	velocity = knockbackDirection
 	move_and_slide()
-
-
-func _on_hurt_box_area_exited(area):
-	enemyCollisions.erase(area)

@@ -8,7 +8,7 @@ var startPosition
 var endPosition
 
 var isDead: bool = false
-var maxHealth: int = 5
+var maxHealth: int = 1
 func _ready():
 	startPosition = position
 	endPosition = endPoint.global_position
@@ -51,8 +51,7 @@ func _on_hurt_box_area_entered(area):
 	print("vida pós hit ",maxHealth)
 	print("=========")
 	if maxHealth <= 0:
-		if area == $hitBox:
-			return
+		if area == $hitBox: return
 		isDead = true
 		$AnimatedSprite2D.play("dead")
 	

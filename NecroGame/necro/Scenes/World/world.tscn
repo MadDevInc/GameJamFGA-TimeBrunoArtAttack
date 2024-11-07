@@ -28,11 +28,11 @@ limit_right = 1024
 limit_bottom = 576
 
 [node name="Enemies" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("3_15fvu")]
-position = Vector2(319, 53)
+position = Vector2(143, 54)
 endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Enemies"]
-position = Vector2(-142, -1)
+position = Vector2(179, -4)
 
 [node name="Enemies2" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("3_15fvu")]
 position = Vector2(170, 162)

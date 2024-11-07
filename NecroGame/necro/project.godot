@@ -16,7 +16,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GLOBAL="*res://source/global.gd"
+GLOBAL="*res://GlobalScripts/global.gd"
 
 [display]
 

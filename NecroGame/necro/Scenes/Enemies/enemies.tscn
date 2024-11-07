@@ -153,9 +153,8 @@ script = ExtResource("1_52cai")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1.81899e-12, -6)
-scale = Vector2(2.5, 2.14286)
 sprite_frames = SubResource("SpriteFrames_w27wu")
-animation = &"dead"
+animation = &"walk_right"
 autoplay = "walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

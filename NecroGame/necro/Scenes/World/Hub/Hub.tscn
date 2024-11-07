@@ -63,17 +63,17 @@ position = Vector2(263, 144)
 position = Vector2(263, 120)
 tile_map_data = PackedByteArray("AAAMAAgAAAAGAAQAAAAMAAkAAAAGAAUAAAAMAAoAAAAGAAYAAAAUAAgAAAAGAAQAAAAUAAkAAAAGAAUAAAAUAAoAAAAGAAYAAAAUAAsAAAAGAAQAAAAUAAwAAAAGAAUAAAAUAA0AAAAGAAYAAAAUAA4AAAAGAAQAAAAUAA8AAAAGAAUAAAAUABAAAAAGAAYAAAAUABEAAAAGAAQAAAAUABIAAAAGAAUAAAAUABMAAAAGAAYAAAAMAAsAAAAGAAQAAAAMAAwAAAAGAAUAAAAMAA0AAAAGAAYAAAAMAA4AAAAGAAQAAAAMAA8AAAAGAAUAAAAMABAAAAAGAAYAAAAMABEAAAAGAAQAAAAMABIAAAAGAAUAAAAMABMAAAAGAAYAAAA=")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(746, 222)
+[node name="Portal" type="Area2D" parent="."]
+position = Vector2(137, 50)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Portal"]
 sprite_frames = SubResource("SpriteFrames_fj03i")
 frame_progress = 0.700938
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
 shape = SubResource("CircleShape2D_vw67d")
 
-[node name="Player" parent="." instance=ExtResource("3_a0hsu")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("3_a0hsu")]
 position = Vector2(526, 416)
 
 [node name="book" parent="." instance=ExtResource("6_58u8x")]
@@ -82,3 +82,6 @@ position = Vector2(283, 197)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(518, 290)
 zoom = Vector2(2, 2)
+
+[connection signal="body_entered" from="Portal" to="." method="_on_portal_body_entered"]
+[connection signal="body_exited" from="Portal" to="." method="_on_portal_body_exited"]

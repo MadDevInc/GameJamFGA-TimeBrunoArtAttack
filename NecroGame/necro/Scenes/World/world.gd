@@ -4,10 +4,10 @@ extends Node2D
 #Mudar quando mudar Tilemaps e Câmera
 @onready var player = $Player
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	heartsContainer.setMaxHearts(player.maxHealth)
-	heartsContainer.updateHearts(player.currentHealth)
-	player.healthChanged.connect(heartsContainer.updateHearts)
+#func _ready():
+	#heartsContainer.setMaxHearts(player.maxHealth)
+	#heartsContainer.updateHearts(player.currentHealth)
+	#player.healthChanged.connect(heartsContainer.updateHearts)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

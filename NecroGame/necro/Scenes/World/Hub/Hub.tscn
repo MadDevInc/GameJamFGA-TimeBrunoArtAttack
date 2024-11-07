@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cygld0mlfw0s6"]
+[gd_scene load_steps=3 format=3 uid="uid://cygld0mlfw0s6"]
 
 [ext_resource type="Script" path="res://Scenes/World/Hub/hub.gd" id="1_oi3vg"]
+[ext_resource type="Script" path="res://Scenes/World/Hub/label.gd" id="2_5qr5g"]
 
 [node name="Hub" type="Node2D"]
 script = ExtResource("1_oi3vg")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("2_5qr5g")

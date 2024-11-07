@@ -1,21 +1,16 @@
-[gd_scene load_steps=44 format=3 uid="uid://46qcy21dsoc7"]
+[gd_scene load_steps=32 format=3 uid="uid://46qcy21dsoc7"]
 
-[ext_resource type="Script" path="res://scenes/Player/player.gd" id="1_02oea"]
-[ext_resource type="Texture2D" uid="uid://ctepl8nbfkn0g" path="res://sprites/Esqueleto/skeleton_attack_bottom.png" id="2_uqmw3"]
-[ext_resource type="Texture2D" uid="uid://bsweig1ith810" path="res://sprites/Necrogame sprites/necro.png" id="3_1gqqv"]
-[ext_resource type="Texture2D" uid="uid://byrletg15d868" path="res://sprites/Esqueleto/skeleton_attack_rl.png" id="3_13j1c"]
-[ext_resource type="Texture2D" uid="uid://m7bwoqh6jcje" path="res://sprites/Necrogame sprites/skeleton_attack_left.png" id="3_kx2vo"]
-[ext_resource type="Texture2D" uid="uid://bys6h0tat67xw" path="res://sprites/Esqueleto/skeleton_attack_top.png" id="4_jajwv"]
-[ext_resource type="Texture2D" uid="uid://c4ynojoj83od0" path="res://sprites/Necrogame sprites/necro_walk_bottom.png" id="4_r0pst"]
-[ext_resource type="Texture2D" uid="uid://dxa7djag3awrp" path="res://sprites/Esqueleto/skeleton_walk_left.png" id="5_7jion"]
-[ext_resource type="Texture2D" uid="uid://cfhs2p0wojyw8" path="res://sprites/Necrogame sprites/necro_walk_top.png" id="5_gwklw"]
-[ext_resource type="Texture2D" uid="uid://deskr0ipfp305" path="res://sprites/Necrogame sprites/necro_walk_rl.png" id="5_nejrf"]
-[ext_resource type="Texture2D" uid="uid://dhw6gx2mg70uy" path="res://sprites/Esqueleto/skeleton_walk_rl.png" id="6_m7pvv"]
-[ext_resource type="Texture2D" uid="uid://dui6hbfesdmsj" path="res://sprites/Necrogame sprites/necro_walk_left.png" id="10_u3h2o"]
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_02oea"]
+[ext_resource type="Texture2D" uid="uid://6i1affxp7m5w" path="res://Sprites/player/Sword_attack_full.png" id="2_52j2d"]
+[ext_resource type="Texture2D" uid="uid://ki0a5gw3m3uw" path="res://Sprites/Necromantix/necro.png" id="3_q64cu"]
+[ext_resource type="Texture2D" uid="uid://d2asejk5lhoys" path="res://Sprites/Necromantix/necro_walk_bottom.png" id="4_enwk4"]
+[ext_resource type="Texture2D" uid="uid://6o8dsdxobsvl" path="res://Sprites/Necromantix/necro_walk_left.png" id="5_gtxm5"]
+[ext_resource type="Texture2D" uid="uid://dysw70oxs641o" path="res://Sprites/Necrogame sprites/necro_walk_top.png" id="5_gwklw"]
+[ext_resource type="Texture2D" uid="uid://cbsrmxe03f56p" path="res://Sprites/Necrogame sprites/necro_walk_rl.png" id="5_nejrf"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tjxo2"]
-atlas = ExtResource("2_uqmw3")
-region = Rect2(0, 0, 16, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua7cr"]
+atlas = ExtResource("2_52j2d")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oij5s"]
 atlas = ExtResource("2_uqmw3")
@@ -65,36 +60,36 @@ region = Rect2(32, 0, 16, 32)
 atlas = ExtResource("5_7jion")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fn1hy"]
-atlas = ExtResource("6_m7pvv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppcdq"]
+atlas = ExtResource("2_52j2d")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwr30"]
+atlas = ExtResource("3_q64cu")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_chjpa"]
-atlas = ExtResource("4_jajwv")
-region = Rect2(0, 0, 16, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilajg"]
+atlas = ExtResource("4_enwk4")
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rof8i"]
-atlas = ExtResource("4_r0pst")
+[sub_resource type="AtlasTexture" id="AtlasTexture_my2lu"]
+atlas = ExtResource("4_enwk4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tirc"]
+atlas = ExtResource("5_gtxm5")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_02n5c"]
 atlas = ExtResource("5_gtxm5")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gf58q"]
-atlas = ExtResource("10_u3h2o")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vausl"]
-atlas = ExtResource("10_u3h2o")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2gqxp"]
-atlas = ExtResource("10_u3h2o")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vum2r"]
+atlas = ExtResource("5_gtxm5")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_80a4u"]
-atlas = ExtResource("10_u3h2o")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hf3o5"]
+atlas = ExtResource("5_gtxm5")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u52oc"]
@@ -181,31 +176,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g6880")
-}],
-"loop": true,
-"name": &"idle_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fn1hy")
-}],
-"loop": true,
-"name": &"idle_right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_chjpa")
-}],
-"loop": true,
-"name": &"idle_top",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_1gqqv")
+"texture": SubResource("AtlasTexture_rwr30")
 }],
 "loop": true,
 "name": &"necro_idle",
@@ -220,20 +191,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"necro_walk_bottom",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gf58q")
+"texture": SubResource("AtlasTexture_8tirc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vausl")
+"texture": SubResource("AtlasTexture_02n5c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2gqxp")
+"texture": SubResource("AtlasTexture_vum2r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_80a4u")
+"texture": SubResource("AtlasTexture_hf3o5")
 }],
 "loop": true,
 "name": &"necro_walk_left",
@@ -287,7 +258,7 @@ script = ExtResource("1_02oea")
 texture_filter = 1
 position = Vector2(1, -4)
 sprite_frames = SubResource("SpriteFrames_xbxkd")
-animation = &"attack_top"
+animation = &"necro_walk_left"
 autoplay = "necro_idle"
 frame = 1
 

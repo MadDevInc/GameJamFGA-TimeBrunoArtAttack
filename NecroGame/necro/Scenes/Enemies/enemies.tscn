@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://xhl48uycu6pl"]
+[gd_scene load_steps=19 format=3 uid="uid://xhl48uycu6pl"]
 
-[ext_resource type="Texture2D" uid="uid://bla3r0j8ju6a2" path="res://sprites/Enemies/Forest/Skeleton/MushroomWalkPlaceHolder.png" id="1_0owcj"]
 [ext_resource type="Script" path="res://Scenes/Enemies/enemies.gd" id="1_52cai"]
 [ext_resource type="Texture2D" uid="uid://b5xrlgorfiuy5" path="res://Sprites/Necrogame sprites/enemy_walk_bottom.png" id="2_7nm1j"]
 [ext_resource type="Texture2D" uid="uid://tv5dk8gmhcrc" path="res://Sprites/Necromantix/enemy_walk_left.png" id="3_51jng"]

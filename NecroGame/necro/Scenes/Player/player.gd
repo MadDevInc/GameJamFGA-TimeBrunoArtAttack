@@ -22,48 +22,31 @@ func _physics_process(delta):
 
 	var direction_x = Input.get_axis("left", "right")
 	var direction_y = Input.get_axis("up", "down")
+	
+	if direction_x == 0 and direction_y == 0:
+		$AnimatedSprite2D.play("necro_idle")
 
-	if !is_attacking:
-		if direction_x:
-			velocity.x = direction_x * SPEED
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-			
-		if direction_y:
-			velocity.y = direction_y * SPEED
-		else:
-			velocity.y = move_toward(velocity.y, 0, SPEED)
 
+	if direction_x:
+		velocity.x = direction_x * SPEED
 		if direction_x > 0:
 			$AnimatedSprite2D.play("necro_walk_right")
-		elif direction_x < 0:
+		else:
 			$AnimatedSprite2D.play("necro_walk_left")
-		elif direction_y > 0:
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+
+	
+	if direction_y:
+		velocity.y = direction_y * SPEED
+		if direction_y > 0:
 			$AnimatedSprite2D.play("necro_walk_bottom")
-		elif direction_y < 0:
+		else:
 			$AnimatedSprite2D.play("necro_walk_top")
+	else:
+		velocity.y = move_toward(velocity.y, 0, SPEED)
 		
-		if direction_x == 0 and direction_y == 0:
-			if $AnimatedSprite2D.animation == "necro_walk_right":
-				$AnimatedSprite2D.play("idle_right")
-			elif $AnimatedSprite2D.animation == "necro_walk_left":
-				$AnimatedSprite2D.play("idle_left")
-			elif $AnimatedSprite2D.animation == "necro_walk_bottom":
-				$AnimatedSprite2D.play("necro_idle")
-			elif $AnimatedSprite2D.animation == "necro_walk_top":
-				$AnimatedSprite2D.play("idle_top")
-		
-		if Input.is_action_just_pressed("attack"):
-			velocity = Vector2(0,0)
-			is_attacking = true
-			if $AnimatedSprite2D.animation == "necro_idle" or $AnimatedSprite2D.animation == "necro_walk_bottom":
-				$AnimatedSprite2D.play("attack_bottom")
-			if $AnimatedSprite2D.animation == "idle_right" or $AnimatedSprite2D.animation == "necro_walk_right":
-				$AnimatedSprite2D.play("attack_right")
-			if $AnimatedSprite2D.animation == "idle_left" or $AnimatedSprite2D.animation == "necro_walk_left":
-				$AnimatedSprite2D.play("attack_left")
-			if $AnimatedSprite2D.animation == "idle_top" or $AnimatedSprite2D.animation == "necro_walk_top":
-				$AnimatedSprite2D.play("attack_top")
 
 	move_and_slide()
 	

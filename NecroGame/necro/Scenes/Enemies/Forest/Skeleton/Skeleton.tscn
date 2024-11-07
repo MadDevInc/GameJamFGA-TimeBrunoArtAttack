@@ -1,11 +1,11 @@
 [gd_scene load_steps=20 format=3 uid="uid://chxm7u022syxj"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/Forest/Skeleton/Skeleton.gd" id="1_vdd3v"]
-[ext_resource type="Texture2D" uid="uid://djyi05i70ibxa" path="res://Sprites/Necrogame sprites/enemy_attack_bottom.png" id="2_ma71s"]
-[ext_resource type="Texture2D" uid="uid://d2ad65pw0i4yg" path="res://Sprites/UI/Attack_Target_Locked.png" id="3_1xhyr"]
-[ext_resource type="Texture2D" uid="uid://b2mbivmtegkqe" path="res://Sprites/Necrogame sprites/enemy_walk_bottom.png" id="3_4in1l"]
+[ext_resource type="Texture2D" uid="uid://dn0y1ebi1p6mn" path="res://Sprites/Necrogame sprites/enemy_attack_bottom.png" id="2_ma71s"]
+[ext_resource type="Texture2D" uid="uid://c0xa6xkp758fu" path="res://Sprites/UI/Attack_Target_Locked.png" id="3_1xhyr"]
+[ext_resource type="Texture2D" uid="uid://ruvg3pxkiftu" path="res://Sprites/Necrogame sprites/enemy_walk_bottom.png" id="3_4in1l"]
 [ext_resource type="PackedScene" uid="uid://dyy3470ehetmv" path="res://Scenes/Entity/HealthComponent.tscn" id="3_c6qvp"]
-[ext_resource type="Texture2D" uid="uid://y0fuxk6b6wsx" path="res://Sprites/UI/Attack_Target_Unlocked.png" id="4_y5kv7"]
+[ext_resource type="Texture2D" uid="uid://dir3owvbkda7j" path="res://Sprites/UI/Attack_Target_Unlocked.png" id="4_y5kv7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y74wx"]
 size = Vector2(6, 3)

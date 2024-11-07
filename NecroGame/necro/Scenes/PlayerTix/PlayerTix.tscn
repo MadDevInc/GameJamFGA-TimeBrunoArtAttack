@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ba12u37k6dgw4"]
 
 [ext_resource type="Script" path="res://Scenes/PlayerTix/PlayerTix.gd" id="1_xjcnv"]
-[ext_resource type="Texture2D" uid="uid://4t8p6cyk6hhk" path="res://Sprites/player/necro/necro.png" id="2_ka35o"]
+[ext_resource type="Texture2D" uid="uid://ckkn1vdqalq8s" path="res://Sprites/player/necro/necro.png" id="2_ka35o"]
 [ext_resource type="PackedScene" uid="uid://dyy3470ehetmv" path="res://Scenes/Entity/HealthComponent.tscn" id="4_qittk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pyq3b"]

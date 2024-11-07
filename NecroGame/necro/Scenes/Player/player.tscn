@@ -321,6 +321,7 @@ debug_color = Color(0.930832, 2.65682e-05, 0.655202, 0.42)
 wait_time = 1.5
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -34.0
 offset_top = -44.0
 offset_right = 34.0

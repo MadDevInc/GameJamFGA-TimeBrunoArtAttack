@@ -1,6 +1,6 @@
 extends Node
 
-var cash: int = 0
+var cash: int = 500
 var xp = 0;
 var maxHealth = 3;
 var dano = 2;

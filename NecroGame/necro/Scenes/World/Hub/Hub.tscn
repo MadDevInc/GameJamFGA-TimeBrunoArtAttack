@@ -64,7 +64,7 @@ position = Vector2(263, 120)
 tile_map_data = PackedByteArray("AAAMAAgAAAAGAAQAAAAMAAkAAAAGAAUAAAAMAAoAAAAGAAYAAAAUAAgAAAAGAAQAAAAUAAkAAAAGAAUAAAAUAAoAAAAGAAYAAAAUAAsAAAAGAAQAAAAUAAwAAAAGAAUAAAAUAA0AAAAGAAYAAAAUAA4AAAAGAAQAAAAUAA8AAAAGAAUAAAAUABAAAAAGAAYAAAAUABEAAAAGAAQAAAAUABIAAAAGAAUAAAAUABMAAAAGAAYAAAAMAAsAAAAGAAQAAAAMAAwAAAAGAAUAAAAMAA0AAAAGAAYAAAAMAA4AAAAGAAQAAAAMAA8AAAAGAAUAAAAMABAAAAAGAAYAAAAMABEAAAAGAAQAAAAMABIAAAAGAAUAAAAMABMAAAAGAAYAAAA=")
 
 [node name="Portal" type="Area2D" parent="."]
-position = Vector2(137, 50)
+position = Vector2(682, 224)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Portal"]
 sprite_frames = SubResource("SpriteFrames_fj03i")
@@ -74,7 +74,7 @@ frame_progress = 0.700938
 shape = SubResource("CircleShape2D_vw67d")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("3_a0hsu")]
-position = Vector2(526, 416)
+position = Vector2(518, 420)
 
 [node name="book" parent="." instance=ExtResource("6_58u8x")]
 position = Vector2(283, 197)

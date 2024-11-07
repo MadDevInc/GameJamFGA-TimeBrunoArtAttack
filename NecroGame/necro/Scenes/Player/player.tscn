@@ -13,8 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://dhw6gx2mg70uy" path="res://Sprites/Esqueleto/skeleton_walk_rl.png" id="6_m7pvv"]
 [ext_resource type="Texture2D" uid="uid://dui6hbfesdmsj" path="res://Sprites/Necrogame sprites/necro_walk_left.png" id="10_u3h2o"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vthxf"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_tjxo2"]
 atlas = ExtResource("2_uqmw3")
 region = Rect2(0, 0, 16, 32)
@@ -278,44 +276,39 @@ height = 14.3674
 radius = 8.0
 height = 34.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_i03cq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ure4k"]
+size = Vector2(12, 23)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(75, 51)
 script = ExtResource("1_02oea")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7, -3)
-shape = SubResource("CapsuleShape2D_vthxf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1, -4)
 scale = Vector2(1.60938, 1.53125)
 sprite_frames = SubResource("SpriteFrames_xbxkd")
-animation = &"attack_left"
+animation = &"idle_left"
 autoplay = "necro_idle"
 
 [node name="swordHit" type="Area2D" parent="."]
-visible = false
 position = Vector2(0, -4)
 scale = Vector2(1.60938, 1.53125)
 collision_layer = 4
-collision_mask = 0
+collision_mask = 4
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="swordHit"]
 shape = SubResource("CapsuleShape2D_ns6sv")
+disabled = true
 
 [node name="hurtBox" type="Area2D" parent="."]
-visible = false
-collision_layer = 0
+collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
 position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_e2h57")
-disabled = true
 debug_color = Color(0.930832, 2.65682e-05, 0.655202, 0.42)
 
 [node name="hurtTimer" type="Timer" parent="."]
@@ -330,9 +323,8 @@ offset_bottom = -21.0
 text = "ALO ALO"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("CircleShape2D_i03cq")
-disabled = true
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_ure4k")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="swordHit" to="." method="_on_sword_hit_area_entered"]

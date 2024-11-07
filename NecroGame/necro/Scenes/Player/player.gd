@@ -64,11 +64,15 @@ func _physics_process(delta):
 				$AnimatedSprite2D.play("attack_left")
 			if $AnimatedSprite2D.animation == "idle_top" or $AnimatedSprite2D.animation == "necro_walk_top":
 				$AnimatedSprite2D.play("attack_top")
-
+				
+			
 	move_and_slide()
 	
 	if !isHurt:
+		print("dano")
 		for enemyArea in enemyCollisions:
+			print("bateu")
+			print(enemyCollisions)
 			hurtByEnemy(enemyArea)
 
 func _on_animated_sprite_2d_animation_finished():

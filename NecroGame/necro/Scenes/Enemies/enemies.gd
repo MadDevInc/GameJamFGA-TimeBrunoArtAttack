@@ -7,6 +7,8 @@ extends CharacterBody2D
 var startPosition
 var endPosition
 
+var isDead: bool = false
+
 func _ready():
 	startPosition = position
 	endPosition = endPoint.global_position
@@ -26,28 +28,31 @@ func updateVelocity():
 	velocity = moveDirection.normalized()*speed
 	
 func updateAnimation():
-	print(velocity.x)
-
-	# Primeiro, checamos o movimento horizontal
-	if velocity.x != 0:
-		$AnimatedSprite2D.play("enemy_walk_left")
-
-	# Se não houver movimento horizontal, verificamos o vertical
-	elif velocity.y > 0:
-		$AnimatedSprite2D.play("enemy_walk_bottom")
+	if velocity.y > 0:
+		$AnimatedSprite2D.play("walk_left")
 	elif velocity.y < 0:
-		$AnimatedSprite2D.play("enemy_walk_top")
-
-
-		
+		$AnimatedSprite2D.play("walk_right")
+	elif velocity.x > 0:
+		$AnimatedSprite2D.play("walk_right")
+	else:
+		$AnimatedSprite2D.play("walk_left")
 
 func _physics_process(delta):
+	if isDead: return
 	updateVelocity()
 	move_and_slide()
-	updateAnimation()
+	updateAnimation()	
 
 
 func _on_hurt_box_area_entered(area):
 	if area == $hitBox:
 		return
-	print("slime hit")
+	isDead = true
+	$AnimatedSprite2D.play("dead")
+	
+	
+func _on_animated_sprite_2d_animation_finished():
+	if $AnimatedSprite2D.animation == "dead":
+		GLOBAL.cash += 50
+		print(GLOBAL.cash)
+		queue_free()

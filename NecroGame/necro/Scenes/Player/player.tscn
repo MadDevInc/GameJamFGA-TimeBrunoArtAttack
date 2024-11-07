@@ -1,15 +1,17 @@
 [gd_scene load_steps=35 format=3 uid="uid://46qcy21dsoc7"]
 
-[ext_resource type="Script" path="res://scenes/Player/player.gd" id="1_02oea"]
-[ext_resource type="Texture2D" uid="uid://ctepl8nbfkn0g" path="res://sprites/Esqueleto/skeleton_attack_bottom.png" id="2_uqmw3"]
-[ext_resource type="Texture2D" uid="uid://bsweig1ith810" path="res://sprites/Necrogame sprites/necro.png" id="3_1gqqv"]
-[ext_resource type="Texture2D" uid="uid://byrletg15d868" path="res://sprites/Esqueleto/skeleton_attack_rl.png" id="3_13j1c"]
-[ext_resource type="Texture2D" uid="uid://bys6h0tat67xw" path="res://sprites/Esqueleto/skeleton_attack_top.png" id="4_jajwv"]
-[ext_resource type="Texture2D" uid="uid://c4ynojoj83od0" path="res://sprites/Necrogame sprites/necro_walk_bottom.png" id="4_r0pst"]
-[ext_resource type="Texture2D" uid="uid://dxa7djag3awrp" path="res://sprites/Esqueleto/skeleton_walk_left.png" id="5_7jion"]
-[ext_resource type="Texture2D" uid="uid://cfhs2p0wojyw8" path="res://sprites/Necrogame sprites/necro_walk_top.png" id="5_gwklw"]
-[ext_resource type="Texture2D" uid="uid://deskr0ipfp305" path="res://sprites/Necrogame sprites/necro_walk_rl.png" id="5_nejrf"]
-[ext_resource type="Texture2D" uid="uid://dhw6gx2mg70uy" path="res://sprites/Esqueleto/skeleton_walk_rl.png" id="6_m7pvv"]
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_02oea"]
+[ext_resource type="Texture2D" uid="uid://ctepl8nbfkn0g" path="res://Sprites/Esqueleto/skeleton_attack_bottom.png" id="2_uqmw3"]
+[ext_resource type="Texture2D" uid="uid://bsweig1ith810" path="res://Sprites/Necrogame sprites/necro.png" id="3_1gqqv"]
+[ext_resource type="Texture2D" uid="uid://byrletg15d868" path="res://Sprites/Esqueleto/skeleton_attack_rl.png" id="3_13j1c"]
+[ext_resource type="Texture2D" uid="uid://m7bwoqh6jcje" path="res://Sprites/Necrogame sprites/skeleton_attack_left.png" id="3_kx2vo"]
+[ext_resource type="Texture2D" uid="uid://bys6h0tat67xw" path="res://Sprites/Esqueleto/skeleton_attack_top.png" id="4_jajwv"]
+[ext_resource type="Texture2D" uid="uid://c4ynojoj83od0" path="res://Sprites/Necrogame sprites/necro_walk_bottom.png" id="4_r0pst"]
+[ext_resource type="Texture2D" uid="uid://dxa7djag3awrp" path="res://Sprites/Esqueleto/skeleton_walk_left.png" id="5_7jion"]
+[ext_resource type="Texture2D" uid="uid://cfhs2p0wojyw8" path="res://Sprites/Necrogame sprites/necro_walk_top.png" id="5_gwklw"]
+[ext_resource type="Texture2D" uid="uid://deskr0ipfp305" path="res://Sprites/Necrogame sprites/necro_walk_rl.png" id="5_nejrf"]
+[ext_resource type="Texture2D" uid="uid://dhw6gx2mg70uy" path="res://Sprites/Esqueleto/skeleton_walk_rl.png" id="6_m7pvv"]
+[ext_resource type="Texture2D" uid="uid://dui6hbfesdmsj" path="res://Sprites/Necrogame sprites/necro_walk_left.png" id="10_u3h2o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tjxo2"]
 atlas = ExtResource("2_uqmw3")
@@ -227,7 +229,7 @@ texture_filter = 1
 position = Vector2(1, -4)
 scale = Vector2(1.60938, 1.53125)
 sprite_frames = SubResource("SpriteFrames_xbxkd")
-animation = &"necro_walk_right"
+animation = &"attack_top"
 autoplay = "necro_idle"
 
 [node name="swordHit" type="Area2D" parent="AnimatedSprite2D"]
@@ -242,7 +244,8 @@ shape = SubResource("CircleShape2D_b654q")
 disabled = true
 
 [node name="hurtBox" type="Area2D" parent="."]
-collision_mask = 3
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
 position = Vector2(0, -2)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bgk3ta1vladm3"]
+[gd_scene load_steps=9 format=4 uid="uid://bgk3ta1vladm3"]
 
 [ext_resource type="Script" path="res://Scenes/World/world.gd" id="1_1sva8"]
 [ext_resource type="PackedScene" uid="uid://46qcy21dsoc7" path="res://Scenes/Player/player.tscn" id="1_581yn"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://y8rjib77fmxw" path="res://trees.tscn" id="3_ntmc6"]
 [ext_resource type="PackedScene" uid="uid://ddlipjgt3sc7p" path="res://Scenes/GUI/heartsContainer.tscn" id="4_1ep2a"]
 [ext_resource type="PackedScene" uid="uid://b8kwyhu5nvhid" path="res://Scenes/hud.tscn" id="6_jtj71"]
+[ext_resource type="PackedScene" uid="uid://1mcnn5myncdk" path="res://Scenes/tocha.tscn" id="8_4mbme"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_1sva8")
@@ -67,3 +68,36 @@ endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Enemies6"]
 position = Vector2(-2, 331)
+
+[node name="tocha" parent="." instance=ExtResource("8_4mbme")]
+position = Vector2(-63, 291)
+
+[node name="tocha2" parent="." instance=ExtResource("8_4mbme")]
+position = Vector2(298, 342)
+
+[node name="tocha3" parent="." instance=ExtResource("8_4mbme")]
+position = Vector2(362, 343)
+
+[node name="tocha4" parent="." instance=ExtResource("8_4mbme")]
+position = Vector2(417, 255)
+
+[node name="tocha5" parent="." instance=ExtResource("8_4mbme")]
+position = Vector2(613, 254)
+
+[node name="tocha6" parent="." instance=ExtResource("8_4mbme")]
+position = Vector2(279, 255)
+
+[node name="tocha7" parent="." instance=ExtResource("8_4mbme")]
+position = Vector2(106, 252)
+
+[node name="tocha8" parent="." instance=ExtResource("8_4mbme")]
+position = Vector2(830, 91)
+
+[node name="tocha9" parent="." instance=ExtResource("8_4mbme")]
+position = Vector2(814, 91)
+
+[node name="tocha10" parent="." instance=ExtResource("8_4mbme")]
+position = Vector2(714, 90)
+
+[node name="tocha11" parent="." instance=ExtResource("8_4mbme")]
+position = Vector2(730, 90)

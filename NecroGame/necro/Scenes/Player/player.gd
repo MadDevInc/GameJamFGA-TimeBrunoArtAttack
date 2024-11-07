@@ -4,7 +4,7 @@ const SPEED = 50.0
 
 signal healthChanged
 
-@export var maxHealth = 3
+@export var maxHealth = int(GLOBAL.maxHealth)
 @onready var currentHealth: int = maxHealth
 @onready var hurtTimer = $hurtTimer
 

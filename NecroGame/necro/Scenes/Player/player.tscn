@@ -77,8 +77,8 @@ region = Rect2(0, 0, 16, 32)
 atlas = ExtResource("4_r0pst")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r0lo5"]
-atlas = ExtResource("4_r0pst")
+[sub_resource type="AtlasTexture" id="AtlasTexture_02n5c"]
+atlas = ExtResource("5_gtxm5")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gf58q"]
@@ -213,10 +213,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rof8i")
+"texture": SubResource("AtlasTexture_ilajg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r0lo5")
+"texture": SubResource("AtlasTexture_my2lu")
 }],
 "loop": true,
 "name": &"necro_walk_bottom",
@@ -286,7 +286,6 @@ script = ExtResource("1_02oea")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1, -4)
-scale = Vector2(1.60938, 1.53125)
 sprite_frames = SubResource("SpriteFrames_xbxkd")
 animation = &"attack_top"
 autoplay = "necro_idle"

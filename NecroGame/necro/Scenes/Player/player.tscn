@@ -147,7 +147,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fkgpw")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack_left",
 "speed": 5.0
 }, {
@@ -235,7 +235,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_80a4u")
 }],
-"loop": true,
+"loop": false,
 "name": &"necro_walk_left",
 "speed": 5.0
 }, {
@@ -288,9 +288,8 @@ texture_filter = 1
 position = Vector2(1, -4)
 scale = Vector2(1.60938, 1.53125)
 sprite_frames = SubResource("SpriteFrames_xbxkd")
-animation = &"attack_top"
+animation = &"attack_left"
 autoplay = "necro_idle"
-frame = 1
 
 [node name="swordHit" type="Area2D" parent="."]
 position = Vector2(0, -4)

@@ -14,7 +14,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	show_cash()
-	pass
 
 func show_cash():
 	$HUD.get_node("cashLabel").text = "$ " + str(GLOBAL.cash)

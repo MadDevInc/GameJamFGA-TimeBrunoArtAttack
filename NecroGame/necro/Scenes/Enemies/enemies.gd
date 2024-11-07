@@ -12,7 +12,7 @@ var isDead: bool = false
 func _ready():
 	startPosition = position
 	endPosition = endPoint.global_position
-	$AnimatedSprite2D.play("enemy_walk_rl")
+	$AnimatedSprite2D.play("walk_right")
 
 
 func changeDirection():
@@ -50,9 +50,8 @@ func _on_hurt_box_area_entered(area):
 	isDead = true
 	$AnimatedSprite2D.play("dead")
 	
-	
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "dead":
 		GLOBAL.cash += 50
-		print(GLOBAL.cash)
 		queue_free()
+		return

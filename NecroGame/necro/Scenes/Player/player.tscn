@@ -148,7 +148,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fkgpw")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack_left",
 "speed": 5.0
 }, {
@@ -236,7 +236,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_80a4u")
 }],
-"loop": true,
+"loop": false,
 "name": &"necro_walk_left",
 "speed": 5.0
 }, {
@@ -320,6 +320,7 @@ debug_color = Color(0.930832, 2.65682e-05, 0.655202, 0.42)
 wait_time = 1.5
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -34.0
 offset_top = -44.0
 offset_right = 34.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=4 uid="uid://cygld0mlfw0s6"]
 
 [ext_resource type="Script" path="res://Scenes/World/Hub/hub.gd" id="1_oi3vg"]
-[ext_resource type="Texture2D" uid="uid://cub27mjvdkuem" path="res://Sprites/SafeHouse/selo_invocação.png" id="2_cy1lx"]
+[ext_resource type="Texture2D" uid="uid://ijwj237gkm4o" path="res://Sprites/SafeHouse/selo_invocação.png" id="2_cy1lx"]
 [ext_resource type="PackedScene" uid="uid://b0uet66nco2oo" path="res://Scenes/World/Hub/groundSafe.tscn" id="2_dxcfp"]
 [ext_resource type="PackedScene" uid="uid://0s2rw8at0hym" path="res://Scenes/World/Hub/pilastra.tscn" id="3_1oio2"]
 [ext_resource type="PackedScene" uid="uid://46qcy21dsoc7" path="res://Scenes/Player/player.tscn" id="3_a0hsu"]

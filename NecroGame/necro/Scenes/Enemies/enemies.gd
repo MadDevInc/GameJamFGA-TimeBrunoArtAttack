@@ -12,6 +12,8 @@ var isDead: bool = false
 func _ready():
 	startPosition = position
 	endPosition = endPoint.global_position
+	$AnimatedSprite2D.play("enemy_walk_rl")
+
 
 func changeDirection():
 	var tempEnd = endPosition

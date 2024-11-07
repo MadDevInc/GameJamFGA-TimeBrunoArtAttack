@@ -8,7 +8,7 @@ var startPosition
 var endPosition
 
 var isDead: bool = false
-var maxHealth: int = 3
+var maxHealth: int = 5
 func _ready():
 	startPosition = position
 	endPosition = endPoint.global_position
@@ -45,8 +45,11 @@ func _physics_process(delta):
 
 
 func _on_hurt_box_area_entered(area):
-	maxHealth -= 1
-	print("maxHealth ",maxHealth)
+	print("=========")
+	print("vida pre hit ",maxHealth)
+	maxHealth -= int(GLOBAL.dano)
+	print("vida pós hit ",maxHealth)
+	print("=========")
 	if maxHealth <= 0:
 		if area == $hitBox:
 			return

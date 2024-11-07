@@ -28,7 +28,7 @@ limit_right = 1024
 limit_bottom = 576
 
 [node name="Enemies" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("3_15fvu")]
-position = Vector2(284, 52)
+position = Vector2(139, 51)
 endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Enemies"]

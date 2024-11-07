@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://xhl48uycu6pl"]
+[gd_scene load_steps=24 format=3 uid="uid://xhl48uycu6pl"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/enemies.gd" id="1_52cai"]
 [ext_resource type="Texture2D" uid="uid://cphdjfvkoiapl" path="res://Sprites/Necrogame sprites/enemy_die_fx.png" id="2_ko3b8"]
@@ -135,8 +135,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_831g4"]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cp4q5"]
 radius = 8.0
 height = 24.0
@@ -157,10 +155,6 @@ scale = Vector2(2.5, 2.14286)
 sprite_frames = SubResource("SpriteFrames_w27wu")
 animation = &"dead"
 autoplay = "walk_right"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 2)
-shape = SubResource("CircleShape2D_831g4")
 
 [node name="hitBox" type="Area2D" parent="."]
 collision_layer = 4

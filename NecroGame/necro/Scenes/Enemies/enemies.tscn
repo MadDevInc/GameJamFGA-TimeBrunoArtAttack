@@ -1,9 +1,9 @@
 [gd_scene load_steps=24 format=3 uid="uid://xhl48uycu6pl"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/enemies.gd" id="1_52cai"]
-[ext_resource type="Texture2D" uid="uid://buusreitd678q" path="res://Sprites/Necrogame sprites/enemy_die_fx.png" id="2_ko3b8"]
-[ext_resource type="Texture2D" uid="uid://yv3sgb0v1he8" path="res://Sprites/Necrogame sprites/enemy_walk_left.png" id="3_doind"]
-[ext_resource type="Texture2D" uid="uid://8ugv5amuneje" path="res://Sprites/Necrogame sprites/enemy_walk_rl.png" id="4_dlmy6"]
+[ext_resource type="Texture2D" uid="uid://dhcdg7u44428k" path="res://Sprites/Necrogame sprites/enemy_die_fx.png" id="2_ko3b8"]
+[ext_resource type="Texture2D" uid="uid://caj2gbvr2sd4c" path="res://Sprites/Necrogame sprites/enemy_walk_left.png" id="3_doind"]
+[ext_resource type="Texture2D" uid="uid://ytshytayidtv" path="res://Sprites/Necrogame sprites/enemy_walk_rl.png" id="4_dlmy6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vfxye"]
 atlas = ExtResource("2_ko3b8")

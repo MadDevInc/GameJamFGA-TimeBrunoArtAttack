@@ -8,11 +8,11 @@ var startPosition
 var endPosition
 
 var isDead: bool = false
-
+var maxHealth: int = 5
 func _ready():
 	startPosition = position
 	endPosition = endPoint.global_position
-	$AnimatedSprite2D.play("enemy_walk_rl")
+	$AnimatedSprite2D.play("walk_right")
 
 
 func changeDirection():
@@ -45,14 +45,19 @@ func _physics_process(delta):
 
 
 func _on_hurt_box_area_entered(area):
-	if area == $hitBox:
-		return
-	isDead = true
-	$AnimatedSprite2D.play("dead")
-	
+	print("=========")
+	print("vida pre hit ",maxHealth)
+	maxHealth -= int(GLOBAL.dano)
+	print("vida pós hit ",maxHealth)
+	print("=========")
+	if maxHealth <= 0:
+		if area == $hitBox:
+			return
+		isDead = true
+		$AnimatedSprite2D.play("dead")
 	
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "dead":
 		GLOBAL.cash += 50
-		print(GLOBAL.cash)
 		queue_free()
+		return

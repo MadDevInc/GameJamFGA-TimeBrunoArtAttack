@@ -31,10 +31,7 @@ func _on_book_body_exited(body):
 	
 func exit():
 	if Input.is_action_pressed("interact"):
-		if onAreaStayPortal == false:
-			pass
-		if onAreaStayPortal == true:
-			get_tree().change_scene_to_packed(cenaMundo)
+		get_tree().change_scene_to_packed(cenaMundo)
 
 func open_store():
 	if Input.is_action_pressed("interact"):

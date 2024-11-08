@@ -9,6 +9,7 @@ var cash: int = 0
 var bossFight = load("res://Scenes/Boss/bossMap.tscn")
 var onAreaStayPortal: bool = false
 # Called when the node enters the scene tree for the first time.
+
 func _ready():
 	heartsContainer.setMaxHearts(player.maxHealth)
 	print("heartsContainer.setMaxHearts(player.maxHealth) ", heartsContainer.setMaxHearts(player.maxHealth))

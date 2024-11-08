@@ -59,6 +59,7 @@ func _physics_process(delta):
 		
 		if Input.is_action_just_pressed("attack"):
 			bater()
+			$Sounds/WrongHit.play()
 				
 			
 	move_and_slide()

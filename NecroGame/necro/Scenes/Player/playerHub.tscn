@@ -1,65 +1,13 @@
-[gd_scene load_steps=44 format=3 uid="uid://yi08j1hjrb4l"]
+[gd_scene load_steps=28 format=3 uid="uid://yi08j1hjrb4l"]
 
 [ext_resource type="Script" path="res://Scenes/Player/playerHub.gd" id="1_t4c1l"]
-[ext_resource type="Texture2D" uid="uid://60jfmx3jyno5" path="res://Sprites/Esqueleto/skeleton_attack_bottom.png" id="2_ek4oh"]
-[ext_resource type="Texture2D" uid="uid://bxaianpsby2f1" path="res://Sprites/Necrogame sprites/skeleton_attack_left.png" id="3_tps2l"]
-[ext_resource type="Texture2D" uid="uid://ceajiqvbmqluy" path="res://Sprites/Esqueleto/skeleton_attack_rl.png" id="4_qk8ik"]
-[ext_resource type="Texture2D" uid="uid://swcbg280rx5d" path="res://Sprites/Esqueleto/skeleton_attack_top.png" id="5_yhfha"]
-[ext_resource type="Texture2D" uid="uid://bntclkvf6u5pf" path="res://Sprites/Necromantix/necro_walk_left.png" id="6_otw00"]
-[ext_resource type="Texture2D" uid="uid://b4vo3viivyyy8" path="res://Sprites/Necromantix/necro_idle_top.png" id="8_gtdky"]
-[ext_resource type="Texture2D" uid="uid://blmfqdw0y10du" path="res://Sprites/Necrogame sprites/necro.png" id="9_tfwiq"]
-[ext_resource type="Texture2D" uid="uid://ccs3m43p7rem0" path="res://Sprites/Necromantix/necro_walk_bottom.png" id="10_swg0o"]
-[ext_resource type="Texture2D" uid="uid://d0h650kfnwux2" path="res://Sprites/Necrogame sprites/necro_walk_left.png" id="11_uhylo"]
-[ext_resource type="Texture2D" uid="uid://d2j55bnjda6hp" path="res://Sprites/Necrogame sprites/necro_walk_rl.png" id="12_53n1b"]
-[ext_resource type="Texture2D" uid="uid://cn2uffh3c7nip" path="res://Sprites/Necrogame sprites/necro_walk_top.png" id="13_hwh61"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tjxo2"]
-atlas = ExtResource("2_ek4oh")
-region = Rect2(0, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oij5s"]
-atlas = ExtResource("2_ek4oh")
-region = Rect2(16, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ysi2t"]
-atlas = ExtResource("2_ek4oh")
-region = Rect2(32, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h3pcl"]
-atlas = ExtResource("3_tps2l")
-region = Rect2(64, 0, 32, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uawxx"]
-atlas = ExtResource("3_tps2l")
-region = Rect2(32, 0, 32, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fkgpw"]
-atlas = ExtResource("3_tps2l")
-region = Rect2(0, 0, 32, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g85pw"]
-atlas = ExtResource("4_qk8ik")
-region = Rect2(0, 0, 32, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1qi1m"]
-atlas = ExtResource("4_qk8ik")
-region = Rect2(32, 0, 32, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_teduf"]
-atlas = ExtResource("4_qk8ik")
-region = Rect2(64, 0, 32, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xy64b"]
-atlas = ExtResource("5_yhfha")
-region = Rect2(0, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vymi8"]
-atlas = ExtResource("5_yhfha")
-region = Rect2(16, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ep5fj"]
-atlas = ExtResource("5_yhfha")
-region = Rect2(32, 0, 16, 32)
+[ext_resource type="Texture2D" uid="uid://bo5jbvw6sra7c" path="res://Sprites/Necromantix/necro_walk_left.png" id="6_otw00"]
+[ext_resource type="Texture2D" uid="uid://bp17advqn8fep" path="res://Sprites/Necromantix/necro_idle_top.png" id="8_gtdky"]
+[ext_resource type="Texture2D" uid="uid://d21ip7tj2s7wp" path="res://Sprites/Necrogame sprites/necro.png" id="9_tfwiq"]
+[ext_resource type="Texture2D" uid="uid://83c4wc7djqiy" path="res://Sprites/Necromantix/necro_walk_bottom.png" id="10_swg0o"]
+[ext_resource type="Texture2D" uid="uid://bn1k3ft1wpy01" path="res://Sprites/Necrogame sprites/necro_walk_left.png" id="11_uhylo"]
+[ext_resource type="Texture2D" uid="uid://cbsrmxe03f56p" path="res://Sprites/Necrogame sprites/necro_walk_rl.png" id="12_53n1b"]
+[ext_resource type="Texture2D" uid="uid://dysw70oxs641o" path="res://Sprites/Necrogame sprites/necro_walk_top.png" id="13_hwh61"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ohqro"]
 atlas = ExtResource("6_otw00")
@@ -123,62 +71,6 @@ region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xbxkd"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tjxo2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oij5s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ysi2t")
-}],
-"loop": false,
-"name": &"attack_bottom",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h3pcl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uawxx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fkgpw")
-}],
-"loop": false,
-"name": &"attack_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g85pw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1qi1m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_teduf")
-}],
-"loop": false,
-"name": &"attack_right",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xy64b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vymi8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ep5fj")
-}],
-"loop": false,
-"name": &"attack_top",
-"speed": 10.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ohqro")
@@ -286,8 +178,9 @@ script = ExtResource("1_t4c1l")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1, -4)
+scale = Vector2(1.609, 1.531)
 sprite_frames = SubResource("SpriteFrames_xbxkd")
-animation = &"necro_walk_bottom"
+animation = &"idle_right"
 autoplay = "necro_idle"
 
 [node name="swordHit" type="Area2D" parent="."]

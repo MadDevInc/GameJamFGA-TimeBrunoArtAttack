@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://2174oul7ey71"]
 
 [ext_resource type="Script" path="res://Scenes/GUI/heartGui.gd" id="1_uomwf"]
-[ext_resource type="Texture2D" uid="uid://dbui3qpihui5e" path="res://Sprites/Necromantix/life_hub.png" id="2_asjqy"]
+[ext_resource type="Texture2D" uid="uid://ci65w4rxe8h7d" path="res://Sprites/Necromantix/life_hub.png" id="2_asjqy"]
 
 [node name="heartGui" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)

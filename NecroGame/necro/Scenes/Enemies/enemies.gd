@@ -53,11 +53,12 @@ func _on_hurt_box_area_entered(area):
 	if maxHealth <= 0:
 		if area == $hitBox: return
 		isDead = true
+		$Sounds/Explosion.play()
 		$AnimatedSprite2D.play("dead")
 	
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "dead":
 		GLOBAL.cash += 50
-		$Sounds/Explosion.play()
+		#$Sounds/Explosion.play()
 		queue_free()
 		return

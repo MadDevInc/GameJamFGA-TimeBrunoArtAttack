@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cl0cgxlvta0e1"]
+[gd_scene load_steps=3 format=3 uid="uid://cl0cgxlvta0e1"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/menuInicial.gd" id="1_qpx7u"]
+[ext_resource type="FontFile" uid="uid://1jqatys6rhj3" path="res://Font/HomeVideo-Regular.otf" id="2_vw1qd"]
 
 [node name="MenuInicial" type="Control"]
 layout_mode = 3
@@ -30,11 +31,13 @@ script = ExtResource("1_qpx7u")
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../QuitButton")
+theme_override_fonts/font = ExtResource("2_vw1qd")
 text = "Jogar"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../StartButton")
+theme_override_fonts/font = ExtResource("2_vw1qd")
 text = "Sair"
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer" method="_on_start_button_pressed"]

@@ -130,6 +130,3 @@ func knockback(enemyVelocity: Vector2):
 	
 func _on_hurt_box_area_exited(area):
 	enemyCollisions.erase(area)
-	
-func _on_sword_hit_area_entered(area):
-	pass # Replace with function body.

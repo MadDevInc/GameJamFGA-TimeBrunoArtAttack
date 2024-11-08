@@ -43,4 +43,6 @@ func _physics_process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	pass # Replace with function body.
+	maxHealthBoss -= GLOBAL.dano
+	if maxHealthBoss <= 0:
+		queue_free()

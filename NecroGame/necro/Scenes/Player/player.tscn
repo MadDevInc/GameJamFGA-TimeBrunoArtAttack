@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://46qcy21dsoc7"]
+[gd_scene load_steps=44 format=3 uid="uid://46qcy21dsoc7"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_02oea"]
 [ext_resource type="Texture2D" uid="uid://ctepl8nbfkn0g" path="res://Sprites/Esqueleto/skeleton_attack_bottom.png" id="2_uqmw3"]

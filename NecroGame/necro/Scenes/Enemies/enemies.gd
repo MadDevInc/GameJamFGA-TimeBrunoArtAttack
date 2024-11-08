@@ -58,5 +58,6 @@ func _on_hurt_box_area_entered(area):
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "dead":
 		GLOBAL.cash += 50
+		$Sounds/Explosion.play()
 		queue_free()
 		return

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://46qcy21dsoc7"]
+[gd_scene load_steps=48 format=3 uid="uid://46qcy21dsoc7"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_02oea"]
 [ext_resource type="Texture2D" uid="uid://cyt0xnyachyhy" path="res://Sprites/NecroMatix/skeleton_attack_left.png" id="3_ugkil"]
@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cehbrjvuvltrv" path="res://Sprites/NecroMatix/skeleton_walk_bottom.png" id="10_qjtca"]
 [ext_resource type="Texture2D" uid="uid://oldranv4pvwj" path="res://Sprites/NecroMatix/skeleton_walk_left.png" id="11_7y08k"]
 [ext_resource type="Texture2D" uid="uid://b70jfuj32tuem" path="res://Sprites/NecroMatix/skeleton_walk_rl.png" id="12_kxe8r"]
+[ext_resource type="AudioStream" uid="uid://xlag8b4egqop" path="res://art/audio/hit_errado.wav" id="12_u437e"]
 [ext_resource type="Texture2D" uid="uid://bhu1o0jdxhitt" path="res://Sprites/NecroMatix/skeleton_walk_top.png" id="13_k20ya"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vthxf"]
+[ext_resource type="AudioStream" uid="uid://c8i3g1vquk71w" path="res://art/audio/explosão.wav" id="13_o0yv3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eqtrv"]
 atlas = ExtResource("9_r3ivh")
@@ -102,21 +102,21 @@ region = Rect2(32, 0, 16, 16)
 atlas = ExtResource("11_7y08k")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n2xm0"]
-atlas = ExtResource("12_kxe8r")
-region = Rect2(0, 0, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_uhwms"]
 atlas = ExtResource("12_kxe8r")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lny5l"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2xm0"]
 atlas = ExtResource("12_kxe8r")
-region = Rect2(32, 0, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1c1g"]
 atlas = ExtResource("12_kxe8r")
 region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lny5l"]
+atlas = ExtResource("12_kxe8r")
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m86pc"]
 atlas = ExtResource("13_k20ya")
@@ -254,16 +254,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n2xm0")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_uhwms")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lny5l")
+"texture": SubResource("AtlasTexture_n2xm0")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u1c1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lny5l")
 }],
 "loop": true,
 "name": &"necro_walk_right",
@@ -307,7 +307,7 @@ texture_filter = 1
 position = Vector2(1, -4)
 scale = Vector2(1.60938, 1.53125)
 sprite_frames = SubResource("SpriteFrames_xbxkd")
-animation = &"necro_walk_top"
+animation = &"necro_walk_right"
 autoplay = "necro_idle"
 
 [node name="swordHit" type="Area2D" parent="."]
@@ -344,6 +344,14 @@ text = "ALO ALO"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_ure4k")
+
+[node name="Sounds" type="AudioListener2D" parent="."]
+
+[node name="WrongHit" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("12_u437e")
+
+[node name="Explosão" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("13_o0yv3")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="swordHit" to="." method="_on_sword_hit_area_entered"]

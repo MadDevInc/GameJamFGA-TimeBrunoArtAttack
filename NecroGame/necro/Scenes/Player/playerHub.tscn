@@ -178,8 +178,9 @@ script = ExtResource("1_t4c1l")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1, -4)
+scale = Vector2(1.609, 1.531)
 sprite_frames = SubResource("SpriteFrames_xbxkd")
-animation = &"necro_walk_top"
+animation = &"idle_right"
 autoplay = "necro_idle"
 
 [node name="swordHit" type="Area2D" parent="."]

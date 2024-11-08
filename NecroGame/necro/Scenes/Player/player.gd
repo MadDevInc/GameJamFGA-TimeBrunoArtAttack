@@ -56,6 +56,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("attack"):
 			velocity = Vector2(0,0)
 			is_attacking = true
+			$Sounds/WrongHit.play()
 			if $AnimatedSprite2D.animation == "necro_idle" or $AnimatedSprite2D.animation == "necro_walk_bottom":
 				$AnimatedSprite2D.play("attack_bottom")
 			if $AnimatedSprite2D.animation == "idle_right" or $AnimatedSprite2D.animation == "necro_walk_right":

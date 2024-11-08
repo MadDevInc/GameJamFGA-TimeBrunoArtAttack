@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://xhl48uycu6pl"]
+[gd_scene load_steps=26 format=3 uid="uid://xhl48uycu6pl"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/enemies.gd" id="1_52cai"]
 [ext_resource type="Texture2D" uid="uid://buusreitd678q" path="res://Sprites/Necrogame sprites/enemy_die_fx.png" id="2_ko3b8"]
 [ext_resource type="Texture2D" uid="uid://yv3sgb0v1he8" path="res://Sprites/Necrogame sprites/enemy_walk_left.png" id="3_doind"]
 [ext_resource type="Texture2D" uid="uid://8ugv5amuneje" path="res://Sprites/Necrogame sprites/enemy_walk_rl.png" id="4_dlmy6"]
+[ext_resource type="AudioStream" uid="uid://c8i3g1vquk71w" path="res://art/audio/explosão.wav" id="5_cxulw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vfxye"]
 atlas = ExtResource("2_ko3b8")
@@ -156,6 +157,11 @@ position = Vector2(1.81899e-12, -6)
 sprite_frames = SubResource("SpriteFrames_w27wu")
 animation = &"walk_right"
 autoplay = "walk_right"
+
+[node name="Sounds" type="AudioListener2D" parent="."]
+
+[node name="Explosion" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("5_cxulw")
 
 [node name="hitBox" type="Area2D" parent="."]
 collision_layer = 4

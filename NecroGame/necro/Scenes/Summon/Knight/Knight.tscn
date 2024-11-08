@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://drkfrq7sty762"]
 
-[ext_resource type="Texture2D" uid="uid://bbmm2k02l8ls2" path="res://Sprites/Summon/Knight/SkeletonPlaceHolder.png" id="1_0ro7s"]
+[ext_resource type="Texture2D" uid="uid://c0n21mskrruom" path="res://Sprites/Summon/Knight/SkeletonPlaceHolder.png" id="1_0ro7s"]
 [ext_resource type="Script" path="res://Scenes/Enemies/Forest/Skeleton/Skeleton.gd" id="1_1bco0"]
 [ext_resource type="PackedScene" uid="uid://dyy3470ehetmv" path="res://Scenes/Entity/HealthComponent.tscn" id="3_ctikw"]
 

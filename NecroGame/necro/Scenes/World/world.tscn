@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bgk3ta1vladm3"]
+[gd_scene load_steps=17 format=4 uid="uid://bgk3ta1vladm3"]
 
 [ext_resource type="Script" path="res://Scenes/World/world.gd" id="1_1sva8"]
 [ext_resource type="PackedScene" uid="uid://46qcy21dsoc7" path="res://Scenes/Player/player.tscn" id="1_581yn"]
@@ -8,8 +8,53 @@
 [ext_resource type="PackedScene" uid="uid://ddlipjgt3sc7p" path="res://Scenes/GUI/heartsContainer.tscn" id="4_1ep2a"]
 [ext_resource type="PackedScene" uid="uid://b8kwyhu5nvhid" path="res://Scenes/hud.tscn" id="6_jtj71"]
 [ext_resource type="PackedScene" uid="uid://1mcnn5myncdk" path="res://Scenes/World/Hub/tocha.tscn" id="8_4mbme"]
-[ext_resource type="PackedScene" uid="uid://ba12u37k6dgw4" path="res://Scenes/PlayerTix/PlayerTix.tscn" id="9_ofgje"]
-[ext_resource type="PackedScene" uid="uid://chxm7u022syxj" path="res://Scenes/Enemies/Forest/Skeleton/Skeleton.tscn" id="10_genp1"]
+[ext_resource type="Texture2D" uid="uid://ret7ewvux6bm" path="res://Sprites/SafeHouse/selo_invocação.png" id="9_3yp6n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yp1d"]
+atlas = ExtResource("9_3yp6n")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjo1y"]
+atlas = ExtResource("9_3yp6n")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehhkm"]
+atlas = ExtResource("9_3yp6n")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uee4j"]
+atlas = ExtResource("9_3yp6n")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sfqp"]
+atlas = ExtResource("9_3yp6n")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vymlx"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_2yp1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjo1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehhkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uee4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sfqp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nk8wv"]
+radius = 22.0
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_1sva8")
@@ -113,8 +158,14 @@ position = Vector2(714, 90)
 [node name="tocha11" parent="." instance=ExtResource("8_4mbme")]
 position = Vector2(730, 90)
 
-[node name="Player2" parent="." instance=ExtResource("9_ofgje")]
-position = Vector2(100, 51)
+[node name="Portal" type="Area2D" parent="."]
+position = Vector2(922, 473)
 
-[node name="Enemy" parent="." instance=ExtResource("10_genp1")]
-position = Vector2(151, 66)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Portal"]
+sprite_frames = SubResource("SpriteFrames_vymlx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
+shape = SubResource("CircleShape2D_nk8wv")
+
+[connection signal="body_entered" from="Portal" to="." method="_on_portal_body_entered"]
+[connection signal="body_exited" from="Portal" to="." method="_on_portal_body_exited"]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://chxm7u022syxj"]
+[gd_scene load_steps=20 format=3 uid="uid://1r1baj3h23l"]
 
-[ext_resource type="Script" path="res://Scenes/Enemies/Forest/Skeleton/Skeleton.gd" id="1_vdd3v"]
+[ext_resource type="Script" path="res://Scenes/Enemies/Forest/Skeleton/Skeleton.gd" id="1_w0a8v"]
 [ext_resource type="Texture2D" uid="uid://ctdmm5aawqs0g" path="res://Sprites/Necrogame sprites/enemy_attack_bottom.png" id="2_ma71s"]
 [ext_resource type="Texture2D" uid="uid://21f2x1f0rejj" path="res://Sprites/UI/Attack_Target_Locked.png" id="3_1xhyr"]
 [ext_resource type="Texture2D" uid="uid://bjnjdrwbh7hew" path="res://Sprites/Necrogame sprites/enemy_walk_bottom.png" id="3_4in1l"]
@@ -105,7 +105,7 @@ size = Vector2(14, 18)
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 input_pickable = true
-script = ExtResource("1_vdd3v")
+script = ExtResource("1_w0a8v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3.5)

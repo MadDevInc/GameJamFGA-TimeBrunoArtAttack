@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://yqkhx4msabad"]
+
+[ext_resource type="Script" path="res://Scenes/World/testetix/mundo_teste.gd" id="1_e3yqi"]
+[ext_resource type="PackedScene" uid="uid://ba12u37k6dgw4" path="res://Scenes/PlayerTix/PlayerTix.tscn" id="2_7m7o5"]
+[ext_resource type="PackedScene" uid="uid://dvdwfsrcgyq0m" path="res://Scenes/Boss/groundBoss.tscn" id="2_gx2yp"]
+[ext_resource type="PackedScene" uid="uid://chxm7u022syxj" path="res://Scenes/Enemies/Forest/Skeleton/Skeleton.tscn" id="3_nljel"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_gpjo4"]
+vertices = PackedVector2Array(187.992, 14, 279.711, 11.3125, 274.258, 211.133, 12.9531, 214.852, 12.0391, 8.32031)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(188, 4, 290, 1, 284, 221, 3, 225, 2, -2)])
+
+[node name="MundoTeste" type="Node2D"]
+script = ExtResource("1_e3yqi")
+
+[node name="groundBoss" parent="." instance=ExtResource("2_gx2yp")]
+
+[node name="Player" parent="." instance=ExtResource("2_7m7o5")]
+position = Vector2(327, 116)
+
+[node name="Enemy" parent="." instance=ExtResource("3_nljel")]
+position = Vector2(149, 76)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_gpjo4")

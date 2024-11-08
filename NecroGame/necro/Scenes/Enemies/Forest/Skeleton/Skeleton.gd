@@ -32,7 +32,7 @@ func set_movement_target(movement_target: Vector2):
 
 func _physics_process(delta):
 	$Label.text = STATES.keys()[state]
-
+	print("current_target ",current_target)
 	if state == STATES.MOVING_TO_TARGET and current_target != null:
 		animation_player.stop()
 		animated_sprite.animation = "walk"
@@ -54,8 +54,7 @@ func _physics_process(delta):
 		state = STATES.ACQUIRING_TARGET
 
 func _on_vision_cone_body_entered(body):
-	if !body.is_in_group("enemy"):
-		print(body)
+	if body.is_in_group("player"):
 		state = STATES.ACQUIRING_TARGET
 		if current_target != null:
 			var priority_check = check_target_priority(body.get_groups())
@@ -89,6 +88,7 @@ func check_target_priority(target_group : Array) -> bool:
 	return false
 
 func get_priority_value(groups : Array):
+	print(groups)
 	for element in groups:
 		if element in priority:
 			return priority.find(element)
@@ -121,5 +121,5 @@ func _on_mouse_hook_mouse_entered():
 	get_parent().switch_focus(self)
 
 func _on_mouse_hook_mouse_exited():
-	TargetUI.hide()
+	#TargetUI.hide()
 	get_parent().switch_focus(null)

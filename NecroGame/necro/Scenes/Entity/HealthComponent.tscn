@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyy3470ehetmv"]
 
-[ext_resource type="Texture2D" uid="uid://ddaxaffvybeco" path="res://Sprites/UI/health_bar_under.png" id="1_hwiqv"]
-[ext_resource type="Texture2D" uid="uid://b15c4hhneel67" path="res://Sprites/UI/health_bar_progress.png" id="2_aeabf"]
+[ext_resource type="Texture2D" uid="uid://djye3akiiqht" path="res://Sprites/UI/health_bar_under.png" id="1_hwiqv"]
+[ext_resource type="Texture2D" uid="uid://ckgvtfbs37g5v" path="res://Sprites/UI/health_bar_progress.png" id="2_aeabf"]
 [ext_resource type="Script" path="res://Scenes/Entity/HealthComponent.gd" id="3_by11d"]
 
 [node name="HealthComponent" type="TextureProgressBar"]

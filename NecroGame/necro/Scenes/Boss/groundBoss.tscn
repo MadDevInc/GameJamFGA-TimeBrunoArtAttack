@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=4 uid="uid://dvdwfsrcgyq0m"]
 
-[ext_resource type="Texture2D" uid="uid://d1hf2orolbfbk" path="res://Sprites/Boss/boss_level_tileset.png" id="1_k0ctq"]
+[ext_resource type="Texture2D" uid="uid://vo1x3h8xqp8e" path="res://Sprites/Boss/boss_level_tileset.png" id="1_k0ctq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2aywi"]
 texture = ExtResource("1_k0ctq")

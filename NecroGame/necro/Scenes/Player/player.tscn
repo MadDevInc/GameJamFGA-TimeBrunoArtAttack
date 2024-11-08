@@ -287,13 +287,13 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ns6sv"]
-radius = 7.18368
-height = 14.3674
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e2h57"]
 radius = 8.0
 height = 34.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ns6sv"]
+radius = 7.18368
+height = 14.3674
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ure4k"]
 size = Vector2(12, 23)
@@ -310,25 +310,25 @@ sprite_frames = SubResource("SpriteFrames_xbxkd")
 animation = &"necro_walk_right"
 autoplay = "necro_idle"
 
+[node name="hurtBoxPlayer" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBoxPlayer"]
+visible = false
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_e2h57")
+debug_color = Color(0.930832, 2.65682e-05, 0.655202, 0.42)
+
 [node name="swordHit" type="Area2D" parent="."]
 position = Vector2(0, -4)
 scale = Vector2(1.60938, 1.53125)
 collision_layer = 4
 collision_mask = 4
-monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="swordHit"]
+visible = false
 shape = SubResource("CapsuleShape2D_ns6sv")
-disabled = true
-
-[node name="hurtBox" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
-position = Vector2(0, -2)
-shape = SubResource("CapsuleShape2D_e2h57")
-debug_color = Color(0.930832, 2.65682e-05, 0.655202, 0.42)
 
 [node name="hurtTimer" type="Timer" parent="."]
 wait_time = 1.5
@@ -342,6 +342,7 @@ offset_bottom = -21.0
 text = "ALO ALO"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_ure4k")
 
@@ -354,6 +355,7 @@ stream = ExtResource("12_u437e")
 stream = ExtResource("13_o0yv3")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="hurtBoxPlayer" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_exited" from="hurtBoxPlayer" to="." method="_on_hurt_box_area_exited"]
 [connection signal="area_entered" from="swordHit" to="." method="_on_sword_hit_area_entered"]
-[connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]
-[connection signal="area_exited" from="hurtBox" to="." method="_on_hurt_box_area_exited"]
+[connection signal="body_entered" from="swordHit" to="." method="_on_sword_hit_body_entered"]

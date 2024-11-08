@@ -1,38 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ba12u37k6dgw4"]
+[gd_scene load_steps=5 format=3 uid="uid://ba12u37k6dgw4"]
 
 [ext_resource type="Script" path="res://Scenes/PlayerTix/PlayerTix.gd" id="1_xjcnv"]
-[ext_resource type="Texture2D" uid="uid://cfl86i0pr4443" path="res://Sprites/player/necro/necro.png" id="2_ka35o"]
+[ext_resource type="SpriteFrames" uid="uid://ccs3m43p7rem0" path="res://Sprites/Necromantix/necro_walk_bottom.png" id="2_tb5l0"]
 [ext_resource type="PackedScene" uid="uid://dyy3470ehetmv" path="res://Scenes/Entity/HealthComponent.tscn" id="4_qittk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pyq3b"]
 size = Vector2(5.5, 12.5)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fyvgg"]
-atlas = ExtResource("2_ka35o")
-region = Rect2(0, 0, 32, 33)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lgnhy"]
-atlas = ExtResource("2_ka35o")
-region = Rect2(0, 0, 32, 33)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5c6vk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fyvgg")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lgnhy")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 20.0
-}]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_xjcnv")
@@ -44,7 +17,7 @@ shape = SubResource("RectangleShape2D_pyq3b")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(0.4, 0.4)
-sprite_frames = SubResource("SpriteFrames_5c6vk")
+sprite_frames = ExtResource("2_tb5l0")
 animation = &"walk"
 autoplay = "idle"
 

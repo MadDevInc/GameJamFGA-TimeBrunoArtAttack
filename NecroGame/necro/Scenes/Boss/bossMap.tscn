@@ -1,23 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxywdkey3bayc"]
+[gd_scene load_steps=6 format=3 uid="uid://dxywdkey3bayc"]
 
 [ext_resource type="PackedScene" uid="uid://dvdwfsrcgyq0m" path="res://Scenes/Boss/groundBoss.tscn" id="1_lacx6"]
-[ext_resource type="PackedScene" uid="uid://46qcy21dsoc7" path="res://Scenes/Player/player.tscn" id="2_ylvkh"]
-[ext_resource type="PackedScene" uid="uid://j640vja7wl" path="res://Scenes/Boss/boss.tscn" id="3_3bu1j"]
+[ext_resource type="Script" path="res://Scenes/Boss/boss_map.gd" id="1_le3fx"]
+[ext_resource type="PackedScene" uid="uid://ba12u37k6dgw4" path="res://Scenes/PlayerTix/PlayerTix.tscn" id="4_ejell"]
+[ext_resource type="PackedScene" uid="uid://chxm7u022syxj" path="res://Scenes/Enemies/Forest/Skeleton/Skeleton.tscn" id="4_wsqdd"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_qisng"]
+vertices = PackedVector2Array(481, 162.953, 29.0703, 161.039, 29.9219, 42.9531, 481, 41.0391)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(20, 33, 491, 31, 491, 173, 19, 171)])
 
 [node name="bossMap" type="Node2D"]
+script = ExtResource("1_le3fx")
 
 [node name="groundBoss" parent="." instance=ExtResource("1_lacx6")]
-
-[node name="Player" parent="." instance=ExtResource("2_ylvkh")]
-position = Vector2(267, 267)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(257, 147)
 zoom = Vector2(2, 2)
 
-[node name="Boss" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("3_3bu1j")]
-position = Vector2(37, 63)
-endPoint = NodePath("Marker2D")
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_qisng")
 
-[node name="Marker2D" type="Marker2D" parent="Boss"]
-position = Vector2(168, 0)
+[node name="Player2" parent="." instance=ExtResource("4_ejell")]
+position = Vector2(211, 125)
+
+[node name="Enemy" parent="." instance=ExtResource("4_wsqdd")]
+position = Vector2(107, 99)

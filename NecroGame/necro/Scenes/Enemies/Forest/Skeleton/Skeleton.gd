@@ -121,5 +121,5 @@ func _on_mouse_hook_mouse_entered():
 	get_parent().switch_focus(self)
 
 func _on_mouse_hook_mouse_exited():
-	TargetUI.hide()
+	#TargetUI.hide()
 	get_parent().switch_focus(null)

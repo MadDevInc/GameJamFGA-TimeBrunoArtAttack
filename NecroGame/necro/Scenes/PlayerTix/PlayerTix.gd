@@ -52,6 +52,7 @@ func take_hit(damage: int):
 	health_bar.damage(damage)
 
 func die():
+	get_tree().change_scene_to_file("res://Scenes/World/Hub/Hub.tscn")
 	print("Player dead")
 
 func camera_zoom(zoom : float):

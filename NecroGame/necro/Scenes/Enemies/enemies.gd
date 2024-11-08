@@ -45,15 +45,15 @@ func _physics_process(delta):
 
 
 func _on_hurt_box_area_entered(area):
-	print("=========")
-	print("vida pre hit ",maxHealth)
-	maxHealth -= int(GLOBAL.dano)
-	print("vida pós hit ",maxHealth)
-	print("=========")
-	if maxHealth <= 0:
-		if area == $hitBox: return
-		isDead = true
-		$AnimatedSprite2D.play("dead")
+	print(area.name)
+	print(area.get_parent().is_attacking)
+	if area.name == "swordHit" && area.get_parent().is_attacking:
+		maxHealth -= int(GLOBAL.dano)
+		if maxHealth <= 0:
+			if area == $hurtBoxEnemy: return
+			isDead = true
+			$AnimatedSprite2D.play("dead")
+	#if area.name == "hurtBoxPlayer"
 	
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "dead":

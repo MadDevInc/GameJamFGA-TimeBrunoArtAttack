@@ -1,9 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://xhl48uycu6pl"]
+[gd_scene load_steps=24 format=3 uid="uid://xhl48uycu6pl"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/enemies.gd" id="1_52cai"]
-[ext_resource type="Texture2D" uid="uid://buusreitd678q" path="res://Sprites/Necrogame sprites/enemy_die_fx.png" id="2_ko3b8"]
-[ext_resource type="Texture2D" uid="uid://yv3sgb0v1he8" path="res://Sprites/Necrogame sprites/enemy_walk_left.png" id="3_doind"]
-[ext_resource type="Texture2D" uid="uid://8ugv5amuneje" path="res://Sprites/Necrogame sprites/enemy_walk_rl.png" id="4_dlmy6"]
+[ext_resource type="Texture2D" uid="uid://dhcdg7u44428k" path="res://Sprites/Necrogame sprites/enemy_die_fx.png" id="2_ko3b8"]
+[ext_resource type="Texture2D" uid="uid://caj2gbvr2sd4c" path="res://Sprites/Necrogame sprites/enemy_walk_left.png" id="3_doind"]
+[ext_resource type="Texture2D" uid="uid://ytshytayidtv" path="res://Sprites/Necrogame sprites/enemy_walk_rl.png" id="4_dlmy6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vfxye"]
 atlas = ExtResource("2_ko3b8")
@@ -135,12 +135,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cp4q5"]
-radius = 8.0
-height = 24.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_fl338"]
-radius = 12.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p0hb4"]
+radius = 9.0
+height = 18.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ga0lt"]
 
@@ -157,26 +154,18 @@ sprite_frames = SubResource("SpriteFrames_w27wu")
 animation = &"walk_right"
 autoplay = "walk_right"
 
-[node name="hitBox" type="Area2D" parent="."]
+[node name="hurtBoxEnemy" type="Area2D" parent="."]
+position = Vector2(1, -3)
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
-position = Vector2(0, -1)
-shape = SubResource("CapsuleShape2D_cp4q5")
-debug_color = Color(0.893993, 0.000217551, 0.782546, 0.42)
-
-[node name="hurtBox" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
-position = Vector2(-1, -3)
-shape = SubResource("CircleShape2D_fl338")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBoxEnemy"]
+position = Vector2(-1, -2)
+shape = SubResource("CapsuleShape2D_p0hb4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -3)
+position = Vector2(1, -5)
 shape = SubResource("CircleShape2D_ga0lt")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_entered" from="hurtBoxEnemy" to="." method="_on_hurt_box_area_entered"]

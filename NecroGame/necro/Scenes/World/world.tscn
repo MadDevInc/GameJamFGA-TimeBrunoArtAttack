@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ddlipjgt3sc7p" path="res://Scenes/GUI/heartsContainer.tscn" id="4_1ep2a"]
 [ext_resource type="PackedScene" uid="uid://b8kwyhu5nvhid" path="res://Scenes/hud.tscn" id="6_jtj71"]
 [ext_resource type="PackedScene" uid="uid://1mcnn5myncdk" path="res://Scenes/World/Hub/tocha.tscn" id="8_4mbme"]
-[ext_resource type="Texture2D" uid="uid://ret7ewvux6bm" path="res://Sprites/SafeHouse/selo_invocação.png" id="9_3yp6n"]
+[ext_resource type="Texture2D" uid="uid://cub27mjvdkuem" path="res://Sprites/SafeHouse/selo_invocação.png" id="9_3yp6n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2yp1d"]
 atlas = ExtResource("9_3yp6n")

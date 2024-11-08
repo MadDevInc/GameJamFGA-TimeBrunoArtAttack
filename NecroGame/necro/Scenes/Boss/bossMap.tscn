@@ -26,4 +26,4 @@ navigation_polygon = SubResource("NavigationPolygon_qisng")
 position = Vector2(211, 125)
 
 [node name="Enemy" parent="." instance=ExtResource("4_wsqdd")]
-position = Vector2(107, 99)
+position = Vector2(253, 90)

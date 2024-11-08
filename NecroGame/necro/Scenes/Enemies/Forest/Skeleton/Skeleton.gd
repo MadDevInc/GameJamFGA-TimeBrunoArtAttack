@@ -65,6 +65,7 @@ func _on_vision_cone_body_entered(body):
 		state = STATES.MOVING_TO_TARGET
 
 func _on_vision_cone_body_exited(body):
+	print("visioncone ", vision_cone)
 	if body == current_target:
 		state = STATES.CHANGING_TARGET
 		var bodies_in_sight = vision_cone.get_overlapping_bodies()

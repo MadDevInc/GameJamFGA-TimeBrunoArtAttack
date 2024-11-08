@@ -41,10 +41,10 @@ func _physics_process(delta):
 	if move.x != 0 and move.y != 0:
 		move = move/1.75
 
-	if move != Vector2():
-		$AnimatedSprite2D.animation = "walk"
-	else:
-		$AnimatedSprite2D.animation = "idle"
+	#if move != Vector2():
+		#$AnimatedSprite2D.animation = "walk"
+	#else:
+		#$AnimatedSprite2D.animation = "idle"
 
 	move_and_collide(move * delta)
 

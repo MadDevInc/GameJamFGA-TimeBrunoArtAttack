@@ -1,25 +1,58 @@
-[gd_scene load_steps=5 format=3 uid="uid://ba12u37k6dgw4"]
+[gd_scene load_steps=10 format=3 uid="uid://ba12u37k6dgw4"]
 
 [ext_resource type="Script" path="res://Scenes/PlayerTix/PlayerTix.gd" id="1_xjcnv"]
-[ext_resource type="SpriteFrames" uid="uid://ccs3m43p7rem0" path="res://Sprites/Necromantix/necro_walk_bottom.png" id="2_tb5l0"]
+[ext_resource type="Texture2D" uid="uid://csy3u0w73s6jw" path="res://Sprites/Necromantix/skeleton_walk_top.png" id="2_5gasr"]
 [ext_resource type="PackedScene" uid="uid://dyy3470ehetmv" path="res://Scenes/Entity/HealthComponent.tscn" id="4_qittk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pyq3b"]
-size = Vector2(5.5, 12.5)
+size = Vector2(14, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ktx4"]
+atlas = ExtResource("2_5gasr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8m74"]
+atlas = ExtResource("2_5gasr")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyuqa"]
+atlas = ExtResource("2_5gasr")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kduvg"]
+atlas = ExtResource("2_5gasr")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m6fba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ktx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8m74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyuqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kduvg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_xjcnv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.25, 0.25)
 shape = SubResource("RectangleShape2D_pyq3b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.4, 0.4)
-sprite_frames = ExtResource("2_tb5l0")
-animation = &"walk"
-autoplay = "idle"
+sprite_frames = SubResource("SpriteFrames_m6fba")
+frame_progress = 0.342505
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

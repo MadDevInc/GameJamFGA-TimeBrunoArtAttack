@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 var startPosition
 var endPosition
+var maxHealthBoss: int = 20
 
 func _ready():
 	startPosition = position
@@ -39,3 +40,7 @@ func _physics_process(delta):
 	updateVelocity()
 	move_and_slide()
 	updateAnimation()	
+
+
+func _on_area_2d_body_entered(body):
+	pass # Replace with function body.
